@@ -13,14 +13,14 @@
         <li>fancy</li>
       </ul>
       <p>Join us:</p>
-      <form id="apply">
+      <form id="apply-form">
         <div>
           <label for="name">Name:</label>
           <input type="text" id="name" name="name">
         </div>
         <div>
           <label for="email">Email:</label>
-          <input type="text" id="email" name="email">
+          <input type="email" id="email" name="email">
         </div>
         <div>
           <label for="location">Location:</label>
@@ -63,16 +63,17 @@
         function handleFormSubmit(event) {
           event.preventDefault();
           var data = formToJSON(form.elements);
-          var xhr = new XMLHttpRequest();
-          xhr.open('POST', 'PUTTHATENDPOINTHERE', true);
-          xhr.setRequestHeader('Content-Type', 'application/json');
-          xhr.send(JSON.stringify(data));
-          xhr.onloadend = function () {
-            // WHAT DO NOW
-          };
+          console.log(data);
+          // var xhr = new XMLHttpRequest();
+          // xhr.open('POST', 'PUTTHATENDPOINTHERE', true);
+          // xhr.setRequestHeader('Content-Type', 'application/json');
+          // xhr.send(JSON.stringify(data));
+          // xhr.onloadend = function () {
+          //   // WHAT DO NOW
+          // };
         };
 
-        var form = document.getElementsById('apply-form');
+        var form = document.getElementById('apply-form');
         form.addEventListener('submit', handleFormSubmit);
       </script>
     </main>
