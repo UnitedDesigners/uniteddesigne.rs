@@ -16,27 +16,27 @@
       <form id="apply-form">
         <div>
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name">
+          <input type="text" id="name" name="name" required>
         </div>
         <div>
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email">
+          <input type="email" id="email" name="email" required>
         </div>
         <div>
           <label for="location">Location:</label>
-          <input type="text" id="location" name="location">
+          <input type="text" id="location" name="location" required>
         </div>
         <div>
           <label for="field">Job Title:</label>
-          <input type="text" id="field" name="field">
+          <input type="text" id="field" name="field" required>
         </div>
         <div>
           <label for="portfolio">Portfolio URL:</label>
           <input type="text" id="portfolio" name="portfolio">
         </div>
         <div>
-          <label for="reason">Why do you want to join?</label>
-          <textarea id="reason" name="reason"></textarea>
+          <label for="comments">Why do you want to join?</label>
+          <textarea id="comments" name="comments" required></textarea>
         </div>
         <button type="submit">Apply now!</button>
       </form>
@@ -63,14 +63,20 @@
         function handleFormSubmit(event) {
           event.preventDefault();
           var data = formToJSON(form.elements);
-          console.log(data);
-          // var xhr = new XMLHttpRequest();
-          // xhr.open('POST', 'PUTTHATENDPOINTHERE', true);
-          // xhr.setRequestHeader('Content-Type', 'application/json');
-          // xhr.send(JSON.stringify(data));
-          // xhr.onloadend = function () {
-          //   // WHAT DO NOW
-          // };
+          if(!('portfolio' in data)) {
+            data.portfolio = 'Not provided.';
+          }
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', 'https://kzl0zkdru3.execute-api.us-west-2.amazonaws.com/testing/applications', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(JSON.stringify(data));
+          xhr.onloadend = function () {
+            if(xhr.response.status == 'success') {
+              console.log('Thanks for applying!');
+            } else {
+              console.log('Something went terribly wrong...');
+            }
+          };
         };
 
         var form = document.getElementById('apply-form');
