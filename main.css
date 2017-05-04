@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: rgb(21, 33, 72) url("assets/mtns.jpg") bottom left/contain no-repeat;
+}
+
+.wrapper {
+  --width: 80vw;
+  --height: 90vh;
+  display: grid;
+  grid-template-areas:
+    "logo about apply"
+    ". about apply"
+    ". about apply"
+    "foot foot foot";
+  grid-template-columns: calc(16/100 * var(--width)) calc(42/100 * var(--width)) calc(42/100 * var(--width));
+  grid-template-rows: calc(16/100 * var(--width)) auto calc(16/100 * var(--width));
+  grid-column-gap: 10px;
+  height: var(--height);
+  width: var(--width);
+  margin: calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2) calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2);
+}
+
+.logo {
+  grid-area: logo;
+  background: url("assets/logo.svg") top left/50% no-repeat;
+}
+
+.about {
+  grid-area: about;
+}
+
+.about h1 {
+  color: rgb(231, 79, 26);
+}
+
+.apply {
+  grid-area: apply;
+  background: red;
+}
+
+.foot {
+  grid-area: foot;
+}
