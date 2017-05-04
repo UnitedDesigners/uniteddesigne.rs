@@ -1,38 +1,50 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600|Roboto+Slab:400">
     <link rel="stylesheet" type="text/css" href="main.css">
     <title>United Designers</title>
   </head>
   <body>
     <div class="wrapper">
       <div class="logo"></div>
+      <div class="title">
+        <h1>A Slack community for designers</h1>
+      </div>
       <div class="about">
-        <h1>A Slack community for designers</h2>
+        <p class="main">We are United Designers, a global community of digital designers and developers who share a passion for creating. We are not for profit. Some of our most popular channels include:</p>
+        <div class="channels">
+          <p><span>#feedback-and-roasts</span> for sharing works and getting advice</p>
+          <p><span>#design</span> for staying current with the latest trends & techniques</p>
+          <p><span>#how-to</span> when you need held from the pros</p>
+          <p><span>#inspiration</span> from everywhere, anytime</p>
+          <p><span>#jobs, #prototyping, #frontend, #software, #challenges</span>... all those plus emojis</p>
+        </div>
       </div>
       <div class="apply">
+        <p>If you are a designer, front-end dev, or a student of design, you can apply now:</p>
         <form id="apply-form">
-          <div>
+          <div id="name-cont">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
           </div>
-          <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div>
+          <div id="location-cont">
             <label for="location">Location:</label>
             <input type="text" id="location" name="location" required>
           </div>
-          <div>
-            <label for="field">Job Title:</label>
+          <div id="email-cont">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div id="field=-cont">
+            <label for="field">Field:</label>
             <input type="text" id="field" name="field" required>
           </div>
-          <div>
+          <div id="portfolio-cont">
             <label for="portfolio">Portfolio URL:</label>
             <input type="text" id="portfolio" name="portfolio">
           </div>
-          <div>
+          <div id="comments-cont">
             <label for="comments">Why do you want to join?</label>
             <textarea id="comments" name="comments" required></textarea>
           </div>

@@ -16,16 +16,16 @@
 
 .wrapper {
   --width: 80vw;
-  --height: 90vh;
+  --height: 80vh;
   display: grid;
   grid-template-areas:
+    "logo title title"
     "logo about apply"
     ". about apply"
     ". about apply"
     "foot foot foot";
-  grid-template-columns: calc(16/100 * var(--width)) calc(42/100 * var(--width)) calc(42/100 * var(--width));
-  grid-template-rows: calc(16/100 * var(--width)) auto calc(16/100 * var(--width));
-  grid-column-gap: 10px;
+  grid-template-columns: calc(16 / 100 * var(--width)) calc(42 / 100 * var(--width)) calc(42 / 100 * var(--width));
+  grid-template-rows: calc(8 / 100 * var(--width)) calc(8 / 100 * var(--width)) auto calc(16 / 100 * var(--width));
   height: var(--height);
   width: var(--width);
   margin: calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2) calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2);
@@ -36,17 +36,52 @@
   background: url("assets/logo.svg") top left/50% no-repeat;
 }
 
+.title {
+  grid-area: title;
+}
+
+.title h1 {
+  color: rgb(246, 42, 0);
+  font: 400 26px 'Roboto Slab';
+  vertical-align: top;
+}
+
 .about {
   grid-area: about;
 }
 
-.about h1 {
-  color: rgb(231, 79, 26);
+.about .channels {
+  margin-top: 18px;
+}
+
+.about .main, .about .channels {
+  padding-right: calc(8 / 100 * var(--width));
+}
+
+.about p {
+  color: white;
+  font: 300 18px 'Fira Sans';
+  line-height: 160%;
+}
+
+.about p span {
+  color: rgb(54, 155, 216);
+  font: 400 18px 'Fira Sans';
+  line-height: 160%;
 }
 
 .apply {
   grid-area: apply;
-  background: red;
+}
+
+.apply p {
+  color: white;
+  font: 300 18px 'Fira Sans';
+  line-height: 160%;
+}
+
+.apply #apply-form div:nth-child(-n+4){
+  width: calc((42 / 100 * var(--width)) / 2);
 }
 
 .foot {
