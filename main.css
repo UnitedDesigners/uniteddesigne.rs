@@ -5,17 +5,18 @@
 
 .wrapper::before {
   content: '';
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: -10vh;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: -1;
-  background: rgb(21, 33, 72) url("assets/mtns.jpg") bottom left/contain no-repeat;
+  background: rgb(21, 33, 72) url("assets/mtns.jpg") bottom center/contain no-repeat;
+  transform: translate(0, 10vh);
 }
 
 .wrapper {
-  --width: 80vw;
+  --width: 72vw;
   --height: 80vh;
   display: grid;
   grid-template-areas:
@@ -25,7 +26,7 @@
     ". about apply"
     "foot foot foot";
   grid-template-columns: calc(16 / 100 * var(--width)) calc(42 / 100 * var(--width)) calc(42 / 100 * var(--width));
-  grid-template-rows: calc(8 / 100 * var(--width)) calc(8 / 100 * var(--width)) auto calc(16 / 100 * var(--width));
+  grid-template-rows: calc(48px) calc((16 / 100 * var(--width)) - 48px) auto calc(16 / 100 * var(--width));
   height: var(--height);
   width: var(--width);
   margin: calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2) calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2);
@@ -74,14 +75,89 @@
   grid-area: apply;
 }
 
-.apply p {
+.apply p{
   color: white;
   font: 300 18px 'Fira Sans';
   line-height: 160%;
 }
 
+.apply #apply-form {
+  padding-top: 20px;
+  font-size: 0; /*Deals with whoever's dumb idea it was to put spaces after inline items*/
+}
+
+.apply #apply-form div {
+  box-sizing: border-box;
+  padding: 16px;
+  position: relative;
+}
+
+.apply #apply-form #name-cont,
+.apply #apply-form #email-cont,
+.apply #apply-form #portfolio-cont,
+.apply #apply-form #comments-cont {
+  padding-left: 0px;
+}
+
+.apply #apply-form #location-cont,
+.apply #apply-form #field-cont,
+.apply #apply-form #portfolio-cont,
+.apply #apply-form #comments-cont {
+  padding-right: 0px;
+}
+
 .apply #apply-form div:nth-child(-n+4){
   width: calc((42 / 100 * var(--width)) / 2);
+  display: inline-block;
+}
+
+.apply label {
+  font: 300 18px 'Fira Sans';
+  color: rgb(54, 155, 216);
+  display: block;
+}
+
+.apply input, .apply textarea {
+  font: 300 18px 'Fira Sans';
+  color: rgb(54, 155, 216);
+  display: block;
+  border: 1px solid rgb(54, 155, 216);
+  border-radius: 4px;
+  padding: 10px;
+  background: transparent;
+  width: 100%;
+}
+
+.apply textarea:focus, .apply input:focus {
+  outline: 0;
+}
+
+.apply label {
+  position: absolute;
+  top: 0;
+  transform: translate(10px, 26px);
+  transition: all 0.2s ease-in;
+}
+
+.apply textarea:focus + label,
+.apply input:focus + label,
+.apply textarea:not(:placeholder-shown) + label,
+.apply input:not(:placeholder-shown) + label {
+  font-size: 14px;
+  transform: translate(0, 0);
+}
+
+.apply button {
+  font: 300 18px 'Fira Sans';
+  background: rgb(54, 155, 216);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 6px 16px 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
 }
 
 .foot {
