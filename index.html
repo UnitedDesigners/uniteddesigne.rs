@@ -73,23 +73,31 @@
           function handleFormSubmit(event) {
             event.preventDefault();
             var data = formToJSON(form.elements);
+            btn.disabled = true;
+            btn.className = '';
+            btn.innerText = 'Sending...';
+            form.classList.add('loading');
             if(!('portfolio' in data)) {
               data.portfolio = 'Not provided.';
             }
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://kzl0zkdru3.execute-api.us-west-2.amazonaws.com/testing/applications', true);
+            xhr.open('PUT', 'https://kzl0zkdru3.execute-api.us-west-2.amazonaws.com/testing/applications', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(JSON.stringify(data));
             xhr.onloadend = function () {
-              if(xhr.response.status == 'success') {
-                console.log('Thanks for applying!');
+              if(JSON.parse(xhr.response).message == 'Success') {
+                btn.innerText = 'Thanks!';
+                btn.className = 'success';
               } else {
-                console.log('Something went terribly wrong...');
+                btn.innerText = 'Something borked, click to try again!';
+                btn.className = 'error';
+                btn.disabled = false;
               }
             };
           };
 
           var form = document.getElementById('apply-form');
+          var btn = form.getElementsByTagName('button')[0];
           form.addEventListener('submit', handleFormSubmit);
         </script>
       </div>

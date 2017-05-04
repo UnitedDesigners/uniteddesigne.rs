@@ -6,17 +6,17 @@
 .wrapper::before {
   content: '';
   position: fixed;
-  top: -10vh;
+  top: 0vh;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: -1;
   background: rgb(21, 33, 72) url("assets/mtns.jpg") bottom center/contain no-repeat;
-  transform: translate(0, 10vh);
+  transform: translate(0, 0vh);
 }
 
 .wrapper {
-  --width: 72vw;
+  --width: 90vw;
   --height: 80vh;
   display: grid;
   grid-template-areas:
@@ -44,7 +44,7 @@
 .title h1 {
   color: rgb(246, 42, 0);
   font: 400 26px 'Roboto Slab';
-  vertical-align: top;
+  transform: translate(0, -8px);
 }
 
 .about {
@@ -117,6 +117,10 @@
   display: block;
 }
 
+.apply textarea {
+  resize: vertical;
+}
+
 .apply input, .apply textarea {
   font: 300 18px 'Fira Sans';
   color: rgb(54, 155, 216);
@@ -158,8 +162,56 @@
   border-radius: 4px;
   cursor: pointer;
   outline: none;
+  transition: all 0.2s ease-in;
+}
+
+.apply button:disabled {
+  background: rgb(95, 107, 114);
+  cursor: default;
+}
+
+.apply button.error {
+  background: rgb(246, 42, 0);
+}
+
+.apply button.success {
+  background: rgb(37, 202, 103);
 }
 
 .foot {
   grid-area: foot;
+}
+
+
+@media only screen and (min-width : 1400px) {
+  .wrapper::before {
+    top: -10vh;
+    transform: translate(0, 10vh);
+  }
+
+  .wrapper {
+    --width: 80vw;
+  }
+}
+
+@media only screen and (min-width : 1600px) {
+  .wrapper::before {
+    top: -18vh;
+    transform: translate(0, 18vh);
+  }
+
+  .wrapper {
+    --width: 70vw;
+  }
+}
+
+@media only screen and (min-width : 1800px) {
+  .wrapper::before {
+    top: -20vh;
+    transform: translate(0, 20vh);
+  }
+
+  .wrapper {
+    --width: 60vw;
+  }
 }
