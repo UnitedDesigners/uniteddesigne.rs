@@ -1,16 +1,108 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600|Roboto+Slab:400">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>United Designers</title>
   </head>
   <body>
-    <header>
-      <h1>Hello World!</h1>
-    </header>
-    <main>
-      <p>This site is:</p>
-      <ul>
-        <li>fancy</li>
-      </ul>
-    </main>
+    <div class="wrapper">
+      <div class="logo"></div>
+      <div class="title">
+        <h1>A Slack community for designers</h1>
+      </div>
+      <div class="about">
+        <p class="main">We are United Designers, a global community of digital designers and developers who share a passion for creating. We are not for profit. Some of our most popular channels include:</p>
+        <div class="channels">
+          <p><span>#feedback-and-roasts</span> for sharing works and getting advice</p>
+          <p><span>#design</span> for staying current with the latest trends & techniques</p>
+          <p><span>#how-to</span> when you need held from the pros</p>
+          <p><span>#inspiration</span> from everywhere, anytime</p>
+          <p><span>#jobs, #prototyping, #frontend, #software, #challenges</span>... all those plus emojis</p>
+        </div>
+      </div>
+      <div class="apply">
+        <p>If you are a designer, front-end dev, or a student of design, you can apply now:</p>
+        <form id="apply-form">
+          <div id="name-cont">
+            <input type="text" id="name" name="name" required placeholder=" ">
+            <label for="name">Name *</label>
+          </div>
+          <div id="location-cont">
+            <input type="text" id="location" name="location" required placeholder=" ">
+            <label for="location">Location *</label>
+          </div>
+          <div id="email-cont">
+            <input type="email" id="email" name="email" required placeholder=" ">
+            <label for="email">Email *</label>
+          </div>
+          <div id="field-cont">
+            <input type="text" id="field" name="field" required placeholder=" ">
+            <label for="field">Field *</label>
+          </div>
+          <div id="portfolio-cont">
+            <input type="text" id="portfolio" name="portfolio" placeholder=" ">
+            <label for="portfolio">Portfolio</label>
+          </div>
+          <div id="comments-cont">
+            <textarea id="comments" name="comments" required placeholder=" "></textarea>
+            <label for="comments">Why do you want to join? *</label>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+        <script>
+          'use strict';
+
+          function formToJSON(elements) {
+            return [].reduce.call(elements, function (data, element) {
+              if (element.name && element.value && (!['checkbox', 'radio'].includes(element.type) || element.checked)) {
+                if (element.type === 'checkbox') {
+                  data[element.name] = (data[element.name] || []).concat(element.value);
+                } else if (element.options && element.multiple) {
+                  data[element.name] = [].reduce.call(element, function (values, option) {
+                    return option.selected ? values.concat(option.value) : values;
+                  }, []);
+                } else {
+                  data[element.name] = element.value;
+                }
+              }
+              return data;
+            }, {});
+          };
+
+          function handleFormSubmit(event) {
+            event.preventDefault();
+            var data = formToJSON(form.elements);
+            btn.disabled = true;
+            btn.className = '';
+            btn.innerText = 'Sending...';
+            form.classList.add('loading');
+            if(!('portfolio' in data)) {
+              data.portfolio = 'Not provided.';
+            }
+            var xhr = new XMLHttpRequest();
+            xhr.open('PUT', 'https://kzl0zkdru3.execute-api.us-west-2.amazonaws.com/testing/applications', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(data));
+            xhr.onloadend = function () {
+              if(JSON.parse(xhr.response).message == 'Success') {
+                btn.innerText = 'Thanks!';
+                btn.className = 'success';
+              } else {
+                btn.innerText = 'Something borked, click to try again!';
+                btn.className = 'error';
+                btn.disabled = false;
+              }
+            };
+          };
+
+          var form = document.getElementById('apply-form');
+          var btn = form.getElementsByTagName('button')[0];
+          form.addEventListener('submit', handleFormSubmit);
+        </script>
+      </div>
+      <div class="foot">
+      </div>
+    </div>
   </body>
 </html>
