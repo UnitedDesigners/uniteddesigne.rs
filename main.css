@@ -214,31 +214,40 @@
 }
 
 
-@media only screen and (min-width : 1400px) {
-  .wrapper::before {
-    top: -10vh;
-    transform: translate(0, 10vh);
-  }
-
+@media only screen and (max-width:800px) {
   .wrapper {
-    --width: 80vw;
+    --width: 92vw;
+    --height: auto;
+    grid-template-areas:
+      "logo"
+      "title"
+      "about"
+      "apply"
+      "foot";
+    grid-template-columns: auto;
+    grid-template-rows: 16vh auto;
+    margin: 0 calc((100vw - var(--width)) / 2) 0 calc((100vw - var(--width)) / 2);
   }
-}
 
-@media only screen and (min-width : 1600px) {
-  .wrapper::before {
-    top: -16vh;
-    transform: translate(0, 16vh);
+  .logo {
+    background: url("assets/logo.svg") center center no-repeat;
+    margin: 2vh 0 2vh 0;
   }
 
-  .wrapper {
-    --width: 70vw;
+  .title h1 {
+    transform: translate(0, 0);
   }
-}
 
-@media only screen and (min-width : 1800px) {
+  .about {
+    margin: 2vh 0 4vh 0;
+  }
 
-  .wrapper {
-    --width: 60vw;
+  .apply #apply-form div:nth-child(-n+4){
+    width: calc(var(--width) / 2);
+    display: inline-block;
+  }
+
+  .foot {
+    height: 24vh;
   }
 }
