@@ -18,14 +18,15 @@
 .wrapper {
   --width: 90vw;
   --height: 80vh;
+  --gap: 100px;
   display: grid;
   grid-template-areas:
-    "logo title title"
-    "logo about apply"
-    ". about apply"
-    ". about apply"
-    "foot foot foot";
-  grid-template-columns: calc(16 / 100 * var(--width)) calc(42 / 100 * var(--width)) calc(42 / 100 * var(--width));
+    "logo title title title"
+    "logo about pad apply"
+    ". about pad apply"
+    ". about pad apply"
+    "foot foot foot foot";
+  grid-template-columns: calc(16 / 100 * var(--width)) calc(42 / 100 * var(--width) - var(--gap) / 2) var(--gap) calc(42 / 100 * var(--width) - var(--gap) / 2);
   grid-template-rows: calc(48px) calc((16 / 100 * var(--width)) - 48px) auto calc(16 / 100 * var(--width));
   height: var(--height);
   width: var(--width);
@@ -43,7 +44,7 @@
 
 .title h1 {
   color: rgb(246, 42, 0);
-  font: 400 26px 'Roboto Slab';
+  font: 700 26px 'Roboto Slab';
   transform: translate(0, -8px);
 }
 
@@ -53,10 +54,6 @@
 
 .about .channels {
   margin-top: 18px;
-}
-
-.about .main, .about .channels {
-  padding-right: calc(8 / 100 * var(--width));
 }
 
 .about p {
@@ -71,6 +68,10 @@
   line-height: 160%;
 }
 
+.pad {
+  grid-area: pad;
+}
+
 .apply {
   grid-area: apply;
 }
@@ -82,14 +83,24 @@
 }
 
 .apply #apply-form {
-  padding-top: 20px;
+  padding-top: 15px;
   font-size: 0; /*Deals with whoever's dumb idea it was to put spaces after inline items*/
 }
 
 .apply #apply-form div {
   box-sizing: border-box;
-  padding: 16px;
+  padding: 10px;
   position: relative;
+}
+
+.apply #apply-form #name-cont,
+.apply #apply-form #email-cont {
+  padding-right: 5px;
+}
+
+.apply #apply-form #location-cont,
+.apply #apply-form #field-cont {
+  padding-left: 5px;
 }
 
 .apply #apply-form #name-cont,
@@ -107,7 +118,7 @@
 }
 
 .apply #apply-form div:nth-child(-n+4){
-  width: calc((42 / 100 * var(--width)) / 2);
+  width: calc((42 / 100 * var(--width) - var(--gap) / 2) / 2);
   display: inline-block;
 }
 
@@ -125,11 +136,12 @@
   font: 300 18px 'Fira Sans';
   color: rgb(54, 155, 216);
   display: block;
-  border: 1px solid rgb(54, 155, 216);
-  border-radius: 4px;
+  border: 2px solid rgb(54, 155, 216);
+  border-radius: 2px;
   padding: 10px;
   background: transparent;
   width: 100%;
+  transition: all 0.2s ease-in;
 }
 
 .apply textarea:focus, .apply input:focus {
@@ -139,16 +151,26 @@
 .apply label {
   position: absolute;
   top: 0;
-  transform: translate(10px, 26px);
+  transform: translate(10px, 22px);
   transition: all 0.2s ease-in;
+}
+
+.apply textarea:focus,
+.apply input:focus {
+  border: 2px solid rgb(134, 195, 231);
+}
+
+.apply textarea:focus + label,
+.apply input:focus + label {
+  color: rgb(134, 195, 231);
 }
 
 .apply textarea:focus + label,
 .apply input:focus + label,
 .apply textarea:not(:placeholder-shown) + label,
 .apply input:not(:placeholder-shown) + label {
-  font-size: 14px;
-  transform: translate(0, 0);
+  font-size: 12px;
+  transform: translate(2px, -6px);
 }
 
 .apply button {
@@ -159,10 +181,15 @@
   text-align: center;
   text-decoration: none;
   padding: 6px 16px 6px 16px;
-  border-radius: 4px;
+  border-radius: 2px;
   cursor: pointer;
   outline: none;
   transition: all 0.2s ease-in;
+  margin-top: 15px;
+}
+
+.apply button:hover {
+  background: rgb(134, 195, 231);
 }
 
 .apply button:disabled {
