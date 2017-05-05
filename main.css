@@ -123,9 +123,13 @@
 }
 
 .apply label {
-  font: 300 18px 'Fira Sans';
+  font: 400 18px 'Fira Sans';
   color: rgb(54, 155, 216);
   display: block;
+  position: absolute;
+  top: 0;
+  transform: translate(10px, 22px);
+  transition: all 0.2s ease-in;
 }
 
 .apply textarea {
@@ -148,16 +152,10 @@
   outline: 0;
 }
 
-.apply label {
-  position: absolute;
-  top: 0;
-  transform: translate(10px, 22px);
-  transition: all 0.2s ease-in;
-}
-
 .apply textarea:focus,
 .apply input:focus {
   border: 2px solid rgb(134, 195, 231);
+  color: rgb(134, 195, 231);
 }
 
 .apply textarea:focus + label,
@@ -174,7 +172,7 @@
 }
 
 .apply button {
-  font: 300 18px 'Fira Sans';
+  font: 400 18px 'Fira Sans';
   background: rgb(54, 155, 216);
   border: none;
   color: white;
