@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   z-index: -1;
-  background: rgb(21, 33, 72) url("assets/mtns.jpg") bottom center/contain no-repeat;
+  background: url("assets/mtns.png") bottom center/contain no-repeat, linear-gradient(rgb(21, 33, 72), rgb(34, 54, 118));
   transform: translate(0, 0vh);
 }
 
@@ -128,7 +128,7 @@
   display: block;
   position: absolute;
   top: 0;
-  transform: translate(10px, 22px);
+  transform: translate(10px, 21px);
   transition: all 0.2s ease-in;
 }
 
@@ -136,8 +136,12 @@
   resize: vertical;
 }
 
+.apply input {
+  height: 44px;
+}
+
 .apply input, .apply textarea {
-  font: 300 18px 'Fira Sans';
+  font: 300 16px 'Fira Sans';
   color: rgb(54, 155, 216);
   display: block;
   border: 2px solid rgb(54, 155, 216);
@@ -178,7 +182,9 @@
   color: white;
   text-align: center;
   text-decoration: none;
-  padding: 6px 16px 6px 16px;
+  padding: 11px 16px 11px 16px;
+  width: 100px;
+  height: 44px;
   border-radius: 2px;
   cursor: pointer;
   outline: none;
@@ -221,8 +227,8 @@
 
 @media only screen and (min-width : 1600px) {
   .wrapper::before {
-    top: -18vh;
-    transform: translate(0, 18vh);
+    top: -16vh;
+    transform: translate(0, 16vh);
   }
 
   .wrapper {
@@ -231,10 +237,6 @@
 }
 
 @media only screen and (min-width : 1800px) {
-  .wrapper::before {
-    top: -20vh;
-    transform: translate(0, 20vh);
-  }
 
   .wrapper {
     --width: 60vw;
