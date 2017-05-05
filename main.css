@@ -56,6 +56,10 @@
   margin-top: 18px;
 }
 
+.about .channels img {
+  width: 14px;
+}
+
 .about p {
   color: white;
   font: 300 18px 'Fira Sans';
