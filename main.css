@@ -3,16 +3,24 @@
   padding: 0;
 }
 
-.wrapper::before {
-  content: '';
+#stars {
   position: fixed;
-  top: 0vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  background: linear-gradient(rgb(21, 33, 72), rgb(34, 54, 118));
+}
+
+#mtns {
+  position: fixed;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: -1;
-  background: url("assets/mtns.png") bottom center/contain no-repeat, linear-gradient(rgb(21, 33, 72), rgb(34, 54, 118));
-  transform: translate(0, 0vh);
+  background: url("assets/mtns.png") bottom center/contain no-repeat;
 }
 
 .wrapper {
