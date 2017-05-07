@@ -7,156 +7,158 @@
     <title>United Designers - A Slack community for designers</title>
   </head>
   <body>
-    <div class="wrapper">
-      <canvas id="stars"></canvas>
-      <div id="mtns"></div>
-      <div class="logo"></div>
-      <div class="title">
-        <h1>A Slack community for designers</h1>
-      </div>
-      <div class="about">
-        <p class="main">We are United Designers, a global community of digital designers and developers who share a passion for creating. We're not for profit. Some of our most popular channels include:</p>
-        <div class="channels">
-          <p><span>#feedback-and-roasts</span> for sharing works and getting advice,</p>
-          <p><span>#design</span> for staying current with the latest trends & techniques,</p>
-          <p><span>#how-to</span> when you need held from the pros,</p>
-          <p><span>#inspiration</span> from everywhere, anytime,</p>
-          <p><span>#jobs, #prototyping, #frontend, #software, #challenges</span>... plus emojis <a href="https://uniteddesigners.slack.com/" target="_blank"><img src="assets/slack.png"></a></p>
+    <canvas id="stars"></canvas>
+    <div id="mtns"></div>
+    <div class="mobilewrap">
+      <div class="wrapper">
+        <div class="logo"></div>
+        <div class="title">
+          <h1>A Slack community for designers</h1>
         </div>
-      </div>
-      <div class="pad"></div>
-      <div class="apply">
-        <p>If you're a designer, front-end dev, or a student of design, you can apply below:</p>
-        <form id="apply-form">
-          <div id="name-cont">
-            <input type="text" id="name" name="name" required placeholder=" ">
-            <label for="name">Name *</label>
+        <div class="about">
+          <p class="main">We are United Designers, a global community of digital designers and developers who share a passion for creating. We're not for profit. Some of our most popular channels include:</p>
+          <div class="channels">
+            <p><span>#feedback-and-roasts</span> for sharing works and getting advice,</p>
+            <p><span>#design</span> for staying current with the latest trends & techniques,</p>
+            <p><span>#how-to</span> when you need held from the pros,</p>
+            <p><span>#inspiration</span> from everywhere, anytime,</p>
+            <p><span>#jobs, #prototyping, #frontend, #software, #challenges</span>... plus emojis <a href="https://uniteddesigners.slack.com/" target="_blank"><img src="assets/slack.png"></a></p>
           </div>
-          <div id="location-cont">
-            <input type="text" id="location" name="location" required placeholder=" ">
-            <label for="location">Location *</label>
-          </div>
-          <div id="email-cont">
-            <input type="email" id="email" name="email" required placeholder=" ">
-            <label for="email">Email *</label>
-          </div>
-          <div id="field-cont">
-            <input type="text" id="field" name="field" required placeholder=" ">
-            <label for="field">Field *</label>
-          </div>
-          <div id="portfolio-cont">
-            <input type="text" id="portfolio" name="portfolio" placeholder=" ">
-            <label for="portfolio">Portfolio</label>
-          </div>
-          <div id="comments-cont">
-            <textarea id="comments" name="comments" required placeholder=" "></textarea>
-            <label for="comments">Why do you want to join? *</label>
-          </div>
-          <button type="submit">Apply</button>
-        </form>
-        <script>
-          'use strict';
+        </div>
+        <div class="pad"></div>
+        <div class="apply">
+          <p>If you're a designer, front-end dev, or a student of design, you can apply below:</p>
+          <form id="apply-form">
+            <div id="name-cont">
+              <input type="text" id="name" name="name" required placeholder=" ">
+              <label for="name">Name *</label>
+            </div>
+            <div id="location-cont">
+              <input type="text" id="location" name="location" required placeholder=" ">
+              <label for="location">Location *</label>
+            </div>
+            <div id="email-cont">
+              <input type="email" id="email" name="email" required placeholder=" ">
+              <label for="email">Email *</label>
+            </div>
+            <div id="field-cont">
+              <input type="text" id="field" name="field" required placeholder=" ">
+              <label for="field">Field *</label>
+            </div>
+            <div id="portfolio-cont">
+              <input type="text" id="portfolio" name="portfolio" placeholder=" ">
+              <label for="portfolio">Portfolio</label>
+            </div>
+            <div id="comments-cont">
+              <textarea id="comments" name="comments" required placeholder=" "></textarea>
+              <label for="comments">Why do you want to join? *</label>
+            </div>
+            <button type="submit">Apply</button>
+          </form>
+          <script>
+            'use strict';
 
-          function formToJSON(elements) {
-            return [].reduce.call(elements, function (data, element) {
-              if (element.name && element.value && (!['checkbox', 'radio'].includes(element.type) || element.checked)) {
-                if (element.type === 'checkbox') {
-                  data[element.name] = (data[element.name] || []).concat(element.value);
-                } else if (element.options && element.multiple) {
-                  data[element.name] = [].reduce.call(element, function (values, option) {
-                    return option.selected ? values.concat(option.value) : values;
-                  }, []);
-                } else {
-                  data[element.name] = element.value;
+            function formToJSON(elements) {
+              return [].reduce.call(elements, function (data, element) {
+                if (element.name && element.value && (!['checkbox', 'radio'].includes(element.type) || element.checked)) {
+                  if (element.type === 'checkbox') {
+                    data[element.name] = (data[element.name] || []).concat(element.value);
+                  } else if (element.options && element.multiple) {
+                    data[element.name] = [].reduce.call(element, function (values, option) {
+                      return option.selected ? values.concat(option.value) : values;
+                    }, []);
+                  } else {
+                    data[element.name] = element.value;
+                  }
                 }
-              }
-              return data;
-            }, {});
-          };
-
-          function handleFormSubmit(event) {
-            event.preventDefault();
-            var data = formToJSON(form.elements);
-            btn.disabled = true;
-            btn.className = '';
-            btn.innerText = 'Sending...';
-            form.classList.add('loading');
-            if(!('portfolio' in data)) {
-              data.portfolio = 'Not provided.';
-            }
-            var xhr = new XMLHttpRequest();
-            xhr.open('PUT', 'https://kzl0zkdru3.execute-api.us-west-2.amazonaws.com/testing/applications', true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify(data));
-            xhr.onloadend = function () {
-              if(JSON.parse(xhr.response).message == 'Success') {
-                btn.innerText = 'Thanks!';
-                btn.className = 'success';
-              } else {
-                btn.innerText = 'Something borked, click to try again!';
-                btn.className = 'error';
-                btn.disabled = false;
-              }
+                return data;
+              }, {});
             };
-          };
 
-          var form = document.getElementById('apply-form'),
-              btn = form.getElementsByTagName('button')[0],
-              canvas = document.getElementById("stars"),
-              ctx = canvas.getContext('2d'),
+            function handleFormSubmit(event) {
+              event.preventDefault();
+              var data = formToJSON(form.elements);
+              btn.disabled = true;
+              btn.className = '';
+              btn.innerText = 'Sending...';
+              form.classList.add('loading');
+              if(!('portfolio' in data)) {
+                data.portfolio = 'Not provided.';
+              }
+              var xhr = new XMLHttpRequest();
+              xhr.open('PUT', 'https://kzl0zkdru3.execute-api.us-west-2.amazonaws.com/testing/applications', true);
+              xhr.setRequestHeader('Content-Type', 'application/json');
+              xhr.send(JSON.stringify(data));
+              xhr.onloadend = function () {
+                if(JSON.parse(xhr.response).message == 'Success') {
+                  btn.innerText = 'Thanks!';
+                  btn.className = 'success';
+                } else {
+                  btn.innerText = 'Something borked, click to try again!';
+                  btn.className = 'error';
+                  btn.disabled = false;
+                }
+              };
+            };
+
+            var form = document.getElementById('apply-form'),
+                btn = form.getElementsByTagName('button')[0],
+                canvas = document.getElementById("stars"),
+                ctx = canvas.getContext('2d'),
+                stars = [];
+
+            function addStars() {
               stars = [];
-
-          function addStars() {
-            stars = [];
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            for (var i = 0; i < canvas.width/10; i++) {
-              stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                radius: Math.random(),
-                vx: (Math.floor(Math.random() * 10) - 5) / 30,
-                vy: (Math.floor(Math.random() * 10) - 5) / 30
-              });
+              canvas.width = window.innerWidth;
+              canvas.height = window.innerHeight;
+              for (var i = 0; i < canvas.width/10; i++) {
+                stars.push({
+                  x: Math.random() * canvas.width,
+                  y: Math.random() * canvas.height,
+                  radius: Math.random(),
+                  vx: (Math.floor(Math.random() * 10) - 5) / 30,
+                  vy: (Math.floor(Math.random() * 10) - 5) / 30
+                });
+              }
             }
-          }
 
-          function tick() {
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            ctx.globalCompositeOperation = "lighter";
-            for (var i = 0, x = stars.length; i < x; i++) {
-              var s = stars[i];
-              ctx.fillStyle = "#fff";
-              ctx.beginPath();
-              ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
-              ctx.fill();
-              s.x += s.vx;
-              s.y += s.vy;
-              if (s.x < 0 || s.x > canvas.width) s.x = -s.x;
-              if (s.y < 0 || s.y > canvas.height) s.y = -s.y;
+            function tick() {
+              ctx.clearRect(0,0,canvas.width,canvas.height);
+              ctx.globalCompositeOperation = "lighter";
+              for (var i = 0, x = stars.length; i < x; i++) {
+                var s = stars[i];
+                ctx.fillStyle = "#fff";
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+                ctx.fill();
+                s.x += s.vx;
+                s.y += s.vy;
+                if (s.x < 0 || s.x > canvas.width) s.x = -s.x;
+                if (s.y < 0 || s.y > canvas.height) s.y = -s.y;
+              }
+              requestAnimationFrame(tick);
             }
-            requestAnimationFrame(tick);
-          }
 
-          var doResize = true;
-          window.addEventListener("resize",function(){
-            if(doResize){
-              addStars();
-              doResize = false;
-              setTimeout(function(){
-                doResize = true;
+            var doResize = true;
+            window.addEventListener("resize",function(){
+              if(doResize){
                 addStars();
-              }, 100)
-            }
-          });
+                doResize = false;
+                setTimeout(function(){
+                  doResize = true;
+                  addStars();
+                }, 100)
+              }
+            });
 
-          form.addEventListener('submit', handleFormSubmit);
+            form.addEventListener('submit', handleFormSubmit);
 
-          addStars();
-          tick();
-        </script>
-      </div>
-      <div class="foot">
+            addStars();
+            tick();
+          </script>
+        </div>
+        <div class="foot">
+        </div>
       </div>
     </div>
   </body>
