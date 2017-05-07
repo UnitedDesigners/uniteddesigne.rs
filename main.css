@@ -179,10 +179,10 @@
   color: rgb(134, 195, 231);
 }
 
-.apply textarea:focus + label,
-.apply input:focus + label,
-.apply textarea:not(:placeholder-shown) + label,
-.apply input:not(:placeholder-shown) + label {
+.apply textarea:focus ~ label,
+.apply input:focus ~ label,
+.apply textarea:not(:placeholder-shown) ~ label,
+.apply input:not(:placeholder-shown) ~ label {
   font-size: 12px;
   transform: translate(2px, -6px);
 }
