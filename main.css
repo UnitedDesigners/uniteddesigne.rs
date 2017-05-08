@@ -24,40 +24,60 @@
 }
 
 .wrapper {
+  position: relative;
   --width: 90vw;
   --height: 80vh;
   --gap: 100px;
-  display: grid;
-  grid-template-areas:
-    "logo title title title"
-    "logo about pad apply"
-    ". about pad apply"
-    ". about pad apply"
-    "foot foot foot foot";
-  grid-template-columns: calc(16 / 100 * var(--width)) calc(42 / 100 * var(--width) - var(--gap) / 2) var(--gap) calc(42 / 100 * var(--width) - var(--gap) / 2);
-  grid-template-rows: calc(48px) calc((16 / 100 * var(--width)) - 48px) auto calc(16 / 100 * var(--width));
   height: var(--height);
   width: var(--width);
   margin: calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2) calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2);
 }
 
 .logo {
-  grid-area: logo;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: calc(16 / 100 * var(--width));
+  height: calc(16 / 100 * var(--width));
   background: url("assets/logo.svg") top left/50% no-repeat;
 }
 
 .title {
-  grid-area: title;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: calc(84 / 100 * var(--width));
+  height: 48px;
+}
+
+.about {
+  position: absolute;
+  top: 48px;
+  left: calc(16 / 100 * var(--width));
+  width: calc(42 / 100 * var(--width) - var(--gap) / 2);
+  height: auto;
+}
+
+.pad {
+  position: absolute;
+  top: 48px;
+  left: calc(58 / 100 * var(--width) - var(--gap) / 2);
+  width: var(--gap);
+  height: auto;
+}
+
+.apply {
+  position: absolute;
+  top: 48px;
+  right: 0px;
+  width: calc(42 / 100 * var(--width) - var(--gap) / 2);
+  height: auto;
 }
 
 .title h1 {
   color: rgb(246, 42, 0);
   font: 700 26px 'Roboto Slab';
   transform: translate(0, -8px);
-}
-
-.about {
-  grid-area: about;
 }
 
 .about .channels {
@@ -78,14 +98,6 @@
   color: rgb(54, 155, 216);
   font: 400 18px 'Fira Sans';
   line-height: 160%;
-}
-
-.pad {
-  grid-area: pad;
-}
-
-.apply {
-  grid-area: apply;
 }
 
 .apply p{
@@ -222,11 +234,6 @@
   background: rgb(37, 202, 103);
 }
 
-.foot {
-  grid-area: foot;
-}
-
-
 @media only screen and (max-width:800px) {
   body {
     position: fixed;
@@ -249,36 +256,52 @@
   .wrapper {
     --width: 96vw;
     --height: auto;
-    grid-template-areas:
-      "logo"
-      "title"
-      "about"
-      "apply"
-      "foot";
-    grid-template-columns: auto;
-    grid-template-rows: 16vh auto;
     margin: 0 calc((100vw - var(--width)) / 2) 0 calc((100vw - var(--width)) / 2);
   }
 
   .logo {
+    position: initial;
+    width: var(--width);
+    height: 16vh;
     background: url("assets/logo.svg") center center no-repeat;
     margin: 2vh 0 2vh 0;
+  }
+
+  .title {
+    position: initial;
+    width: var(--width);
+    height: var(--height);
+  }
+
+  .about {
+    position: initial;
+    width: var(--width);
+    height: var(--height);
+    margin: 2vh 0 4vh 0;
+  }
+
+  .pad {
+    position: initial;
+    width: 0;
+    height: 0;
+  }
+
+  .apply {
+    position: initial;
+    width: var(--width);
+    height: var(--height);
+  }
+
+  .foot {
+    height: 24vh;
   }
 
   .title h1 {
     transform: translate(0, 0);
   }
 
-  .about {
-    margin: 2vh 0 4vh 0;
-  }
-
   .apply #apply-form div:nth-child(-n+4){
     width: calc(var(--width) / 2);
     display: inline-block;
-  }
-
-  .foot {
-    height: 24vh;
   }
 }
