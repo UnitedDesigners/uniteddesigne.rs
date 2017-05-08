@@ -136,6 +136,7 @@
 
 .apply label {
   font: 400 18px 'Fira Sans';
+  cursor: text;
   color: rgb(54, 155, 216);
   display: block;
   position: absolute;
