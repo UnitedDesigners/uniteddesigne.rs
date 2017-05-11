@@ -140,12 +140,24 @@
             }
 
             var doResize = true;
-            window.addEventListener("resize",function(){
+            window.addEventListener("resize", function() {
               if(doResize){
                 addStars();
                 doResize = false;
                 setTimeout(function(){
                   doResize = true;
+                  addStars();
+                }, 100)
+              }
+            });
+
+            var doRotate = true;
+            window.addEventListener("orientationchange", function() {
+              if(doRotate){
+                addStars();
+                doRotate = false;
+                setTimeout(function(){
+                  doRotate = true;
                   addStars();
                 }, 100)
               }
