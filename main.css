@@ -13,16 +13,6 @@
   background: linear-gradient(rgb(21, 33, 72), rgb(34, 54, 118));
 }
 
-#mtns {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  background: url("assets/mtns.png") bottom center/contain no-repeat;
-}
-
 .wrapper {
   position: relative;
   --width: 90vw;
@@ -234,6 +224,15 @@
   background: rgb(37, 202, 103);
 }
 
+#mtns {
+  position: absolute;
+  bottom: calc((100vh - var(--height)) / -2);
+  left: calc((100vw - var(--width)) / -2);
+  right: calc((100vw - var(--width)) / -2);
+  width: 100vw;
+  z-index: -1;
+}
+
 @media only screen and (max-width:800px) {
   body {
     position: fixed;
@@ -251,6 +250,10 @@
     right: 0;
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+
+  #mtns {
+    bottom: 0;
   }
 
   .wrapper {
