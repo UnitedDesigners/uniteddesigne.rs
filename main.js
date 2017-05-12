@@ -1,5 +1,3 @@
-'use strict';
-
 function formToJSON(elements) {
   return [].reduce.call(elements, function (data, element) {
     if (element.name && element.value && (!['checkbox', 'radio'].includes(element.type) || element.checked)) {
