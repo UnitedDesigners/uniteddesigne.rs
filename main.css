@@ -1,310 +1,403 @@
-* {
-  margin: 0;
-  padding: 0;
+*
+{
+    margin: 0;
+    padding: 0;
 }
 
-#stars {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -2;
-  background: linear-gradient(rgb(21, 33, 72), rgb(34, 54, 118));
+#stars
+{
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient(rgb(21, 33, 72), rgb(34, 54, 118));
 }
 
-.wrapper {
-  position: relative;
-  --width: 90vw;
-  --height: 80vh;
-  --gap: 100px;
-  height: var(--height);
-  width: var(--width);
-  margin: calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2) calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2);
+.wrapper
+{
+    position: relative;
+
+    width: var(--width);
+    height: var(--height);
+    margin: calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2) calc((100vh - var(--height)) / 2) calc((100vw - var(--width)) / 2);
+
+    --width: 90vw;
+    --height: 80vh;
+    --gap: 100px;
 }
 
-.logo {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: calc(16 / 100 * var(--width));
-  height: calc(16 / 100 * var(--width));
-  background: url("assets/logo.svg") top left/50% no-repeat;
+.logo
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: calc(16 / 100 * var(--width));
+    height: calc(16 / 100 * var(--width));
+
+    background: url('assets/logo.svg') top left/50% no-repeat;
 }
 
-.title {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: calc(84 / 100 * var(--width));
-  height: 48px;
+.title
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: calc(84 / 100 * var(--width));
+    height: 48px;
 }
 
-.about {
-  position: absolute;
-  top: 48px;
-  left: calc(16 / 100 * var(--width));
-  width: calc(42 / 100 * var(--width) - var(--gap) / 2);
-  height: auto;
+.about
+{
+    position: absolute;
+    top: 48px;
+    left: calc(16 / 100 * var(--width));
+
+    width: calc(42 / 100 * var(--width) - var(--gap) / 2);
+    height: auto;
 }
 
-.pad {
-  position: absolute;
-  top: 48px;
-  left: calc(58 / 100 * var(--width) - var(--gap) / 2);
-  width: var(--gap);
-  height: auto;
+.pad
+{
+    position: absolute;
+    top: 48px;
+    left: calc(58 / 100 * var(--width) - var(--gap) / 2);
+
+    width: var(--gap);
+    height: auto;
 }
 
-.apply {
-  position: absolute;
-  top: 48px;
-  right: 0px;
-  width: calc(42 / 100 * var(--width) - var(--gap) / 2);
-  height: auto;
+.apply
+{
+    position: absolute;
+    top: 48px;
+    right: 0;
+
+    width: calc(42 / 100 * var(--width) - var(--gap) / 2);
+    height: auto;
 }
 
-.title h1 {
-  color: rgb(246, 42, 0);
-  font: 700 26px 'Roboto Slab';
-  transform: translate(0, -8px);
+.title h1
+{
+    font: 700 26px 'Roboto Slab';
+
+    transform: translate(0, -8px);
+
+    color: rgb(246, 42, 0);
 }
 
-.about .channels {
-  margin-top: 18px;
+.about .channels
+{
+    margin-top: 18px;
 }
 
-.about .channels img {
-  width: 14px;
+.about .channels img
+{
+    width: 14px;
 }
 
-.about p {
-  color: white;
-  font: 300 18px 'Fira Sans';
-  line-height: 160%;
+.about p
+{
+    font: 300 18px 'Fira Sans';
+    line-height: 160%;
+
+    color: white;
 }
 
-.about p span {
-  color: rgb(54, 155, 216);
-  font: 400 18px 'Fira Sans';
-  line-height: 160%;
+.about p span
+{
+    font: 400 18px 'Fira Sans';
+    line-height: 160%;
+
+    color: rgb(54, 155, 216);
 }
 
-.apply p{
-  color: white;
-  font: 300 18px 'Fira Sans';
-  line-height: 160%;
+.apply p
+{
+    font: 300 18px 'Fira Sans';
+    line-height: 160%;
+
+    color: white;
 }
 
-.apply #apply-form {
-  padding-top: 15px;
-  font-size: 0; /*Deals with whoever's dumb idea it was to put spaces after inline items*/
+.apply #apply-form
+{
+    font-size: 0; /*Deals with whoever's dumb idea it was to put spaces after inline items*/
+
+    padding-top: 15px;
 }
 
-.apply #apply-form div {
-  box-sizing: border-box;
-  padding: 10px;
-  position: relative;
+.apply #apply-form div
+{
+    position: relative;
+
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 .apply #apply-form #name-cont,
-.apply #apply-form #email-cont {
-  padding-right: 5px;
+.apply #apply-form #email-cont
+{
+    padding-right: 5px;
 }
 
 .apply #apply-form #location-cont,
-.apply #apply-form #field-cont {
-  padding-left: 5px;
+.apply #apply-form #field-cont
+{
+    padding-left: 5px;
 }
 
 .apply #apply-form #name-cont,
 .apply #apply-form #email-cont,
 .apply #apply-form #portfolio-cont,
-.apply #apply-form #comments-cont {
-  padding-left: 0px;
+.apply #apply-form #comments-cont
+{
+    padding-left: 0;
 }
 
 .apply #apply-form #location-cont,
 .apply #apply-form #field-cont,
 .apply #apply-form #portfolio-cont,
-.apply #apply-form #comments-cont {
-  padding-right: 0px;
+.apply #apply-form #comments-cont
+{
+    padding-right: 0;
 }
 
-.apply #apply-form div:nth-child(-n+4){
-  width: calc((42 / 100 * var(--width) - var(--gap) / 2) / 2);
-  display: inline-block;
+.apply #apply-form div:nth-child(-n+4)
+{
+    display: inline-block;
+
+    width: calc((42 / 100 * var(--width) - var(--gap) / 2) / 2);
 }
 
-.apply label {
-  font: 400 18px 'Fira Sans';
-  cursor: text;
-  color: rgb(54, 155, 216);
-  display: block;
-  position: absolute;
-  top: 0;
-  transform: translate(10px, 21px);
-  transition: all 0.2s ease-in;
+.apply label
+{
+    font: 400 18px 'Fira Sans';
+
+    position: absolute;
+    top: 0;
+
+    display: block;
+
+    cursor: text;
+    transition: all .2s ease-in;
+    transform: translate(10px, 21px);
+
+    color: rgb(54, 155, 216);
 }
 
-.apply textarea {
-  resize: vertical;
+.apply textarea
+{
+    resize: vertical;
 }
 
-.apply input {
-  height: 44px;
+.apply input
+{
+    height: 44px;
 }
 
-.apply input, .apply textarea {
-  font: 300 16px 'Fira Sans';
-  color: rgb(54, 155, 216);
-  display: block;
-  border: 2px solid rgb(54, 155, 216);
-  border-radius: 2px;
-  padding: 10px;
-  background: transparent;
-  width: 100%;
-  transition: all 0.2s ease-in;
-}
+.apply input,
+.apply textarea
+{
+    font: 300 16px 'Fira Sans';
 
-.apply textarea:focus, .apply input:focus {
-  outline: 0;
+    display: block;
+
+    width: 100%;
+    padding: 10px;
+
+    transition: all .2s ease-in;
+
+    color: rgb(54, 155, 216);
+    border: 2px solid rgb(54, 155, 216);
+    border-radius: 2px;
+    background: transparent;
 }
 
 .apply textarea:focus,
-.apply input:focus {
-  border: 2px solid rgb(134, 195, 231);
-  color: rgb(134, 195, 231);
+.apply input:focus
+{
+    outline: 0;
+}
+
+.apply textarea:focus,
+.apply input:focus
+{
+    color: rgb(134, 195, 231);
+    border: 2px solid rgb(134, 195, 231);
 }
 
 .apply textarea:focus + label,
-.apply input:focus + label {
-  color: rgb(134, 195, 231);
+.apply input:focus + label
+{
+    color: rgb(134, 195, 231);
 }
 
 .apply textarea:focus ~ label,
 .apply input:focus ~ label,
 .apply textarea:not(:placeholder-shown) ~ label,
-.apply input:not(:placeholder-shown) ~ label {
-  font-size: 12px;
-  transform: translate(2px, -6px);
+.apply input:not(:placeholder-shown) ~ label
+{
+    font-size: 12px;
+
+    transform: translate(2px, -6px);
 }
 
-.apply button {
-  font: 400 18px 'Fira Sans';
-  background: rgb(54, 155, 216);
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  padding: 11px 16px 11px 16px;
-  width: 100px;
-  height: 44px;
-  border-radius: 2px;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.2s ease-in;
-  margin-top: 15px;
+.apply button
+{
+    font: 400 18px 'Fira Sans';
+
+    width: 100px;
+    height: 44px;
+    margin-top: 15px;
+    padding: 11px 16px 11px 16px;
+
+    cursor: pointer;
+    transition: all .2s ease-in;
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    background: rgb(54, 155, 216);
 }
 
-.apply button:hover {
-  background: rgb(134, 195, 231);
+.apply button:hover
+{
+    background: rgb(134, 195, 231);
 }
 
-.apply button:disabled {
-  background: rgb(95, 107, 114);
-  cursor: default;
+.apply button:disabled
+{
+    cursor: default;
+
+    background: rgb(95, 107, 114);
 }
 
-.apply button.error {
-  background: rgb(246, 42, 0);
+.apply button.error
+{
+    background: rgb(246, 42, 0);
 }
 
-.apply button.success {
-  background: rgb(37, 202, 103);
+.apply button.success
+{
+    background: rgb(37, 202, 103);
 }
 
-#mtns {
-  position: absolute;
-  bottom: calc((100vh - var(--height)) / -2);
-  left: calc((100vw - var(--width)) / -2);
-  right: calc((100vw - var(--width)) / -2);
-  width: 100vw;
-  z-index: -1;
-}
-
-@media only screen and (max-width:800px) {
-  body {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .mobilewrap {
+#mtns
+{
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
+    z-index: -1;
+    right: calc((100vw - var(--width)) / -2);
+    bottom: calc((100vh - var(--height)) / -2);
+    left: calc((100vw - var(--width)) / -2);
 
-  #mtns {
-    bottom: 0;
-  }
+    width: 100vw;
+}
 
-  .wrapper {
-    --width: 96vw;
-    --height: auto;
-    margin: 0 calc((100vw - var(--width)) / 2) 0 calc((100vw - var(--width)) / 2);
-  }
+@media only screen and (max-width:800px)
+{
+    body
+    {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
 
-  .logo {
-    position: initial;
-    width: var(--width);
-    height: 16vh;
-    background: url("assets/logo.svg") center center no-repeat;
-    margin: 2vh 0 2vh 0;
-  }
+    .mobilewrap
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
 
-  .title {
-    position: initial;
-    width: var(--width);
-    height: var(--height);
-  }
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 
-  .about {
-    position: initial;
-    width: var(--width);
-    height: var(--height);
-    margin: 2vh 0 4vh 0;
-  }
+    #mtns
+    {
+        bottom: 0;
+    }
 
-  .pad {
-    position: initial;
-    width: 0;
-    height: 0;
-  }
+    .wrapper
+    {
+        margin: 0 calc((100vw - var(--width)) / 2) 0 calc((100vw - var(--width)) / 2);
 
-  .apply {
-    position: initial;
-    width: var(--width);
-    height: var(--height);
-  }
+        --width: 96vw;
+        --height: auto;
+    }
 
-  .foot {
-    height: 24vh;
-  }
+    .logo
+    {
+        position: initial;
 
-  .title h1 {
-    transform: translate(0, 0);
-  }
+        width: var(--width);
+        height: 16vh;
+        margin: 2vh 0 2vh 0;
 
-  .apply #apply-form div:nth-child(-n+4){
-    width: calc(var(--width) / 2);
-    display: inline-block;
-  }
+        background: url('assets/logo.svg') center center no-repeat;
+    }
+
+    .title
+    {
+        position: initial;
+
+        width: var(--width);
+        height: var(--height);
+    }
+
+    .about
+    {
+        position: initial;
+
+        width: var(--width);
+        height: var(--height);
+        margin: 2vh 0 4vh 0;
+    }
+
+    .pad
+    {
+        position: initial;
+
+        width: 0;
+        height: 0;
+    }
+
+    .apply
+    {
+        position: initial;
+
+        width: var(--width);
+        height: var(--height);
+    }
+
+    .foot
+    {
+        height: 24vh;
+    }
+
+    .title h1
+    {
+        transform: translate(0, 0);
+    }
+
+    .apply #apply-form div:nth-child(-n+4)
+    {
+        display: inline-block;
+
+        width: calc(var(--width) / 2);
+    }
 }
