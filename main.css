@@ -368,6 +368,11 @@
         margin: 2vh 0 4vh 0;
     }
 
+    .channels p
+    {
+        display: inline;
+    }
+
     .pad
     {
         position: initial;
