@@ -143,26 +143,26 @@
 }
 
 .apply #apply-form #name-cont,
-.apply #apply-form #email-cont
+.apply #apply-form #location-cont
 {
     padding-right: 5px;
 }
 
-.apply #apply-form #location-cont,
+.apply #apply-form #email-cont,
 .apply #apply-form #field-cont
 {
     padding-left: 5px;
 }
 
 .apply #apply-form #name-cont,
-.apply #apply-form #email-cont,
+.apply #apply-form #location-cont,
 .apply #apply-form #portfolio-cont,
 .apply #apply-form #comments-cont
 {
     padding-left: 0;
 }
 
-.apply #apply-form #location-cont,
+.apply #apply-form #email-cont,
 .apply #apply-form #field-cont,
 .apply #apply-form #portfolio-cont,
 .apply #apply-form #comments-cont
