@@ -196,6 +196,7 @@
 .apply textarea
 {
     resize: vertical;
+    height: 100px;
 }
 
 .apply input
