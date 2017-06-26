@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="stats-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `stats-element`
+     * Statistics cards for the United Designers website
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class StatsElement extends Polymer.Element {
+      static get is() { return 'stats-element'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'Statistics'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(StatsElement.is, StatsElement);
+  </script>
+</dom-module>
