@@ -12,6 +12,7 @@ components/**/bower_components/
 
 # misc
 .DS_Store
+.sass-cache/
 .env.local
 .env.development.local
 .env.test.local
