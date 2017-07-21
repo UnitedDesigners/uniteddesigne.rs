@@ -1,0 +1,113 @@
+.form {
+  &__desc {
+    background: $primary-gradient;
+    padding: 50px 30px;
+
+    h3 {
+      font-weight: 200;
+      font-size: 24px;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: $color-primary;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.44;
+      margin: 0;
+    }
+  }
+
+  form {
+    background-color: $color-white;
+    padding: 30px;
+
+    label {
+      font-size: 14px;
+      color: $color-grey;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+    }
+
+  }
+
+  &__input {
+    position: relative;
+
+    input, textarea {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid $color-lightgrey;
+      padding: 13px;
+      box-sizing: border-box;
+      height: 48px;
+      margin: 7px 0;
+      outline: none;
+      font-size: 17px;
+      color: $color-grey;
+      transition: border 400ms ease;
+
+      &:active, &:focus {
+        border: 1px solid $color-secondary;
+      }
+    }
+
+    span {
+      position: absolute;
+      color: $color-grey;
+      border: 1px $color-grey solid;
+      border-radius: 50%;
+      height: 21px;
+      width: 21px;
+      right: 15px;
+      top: 19px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      cursor: pointer;
+
+
+      &:hover {
+        color: $color-primary;
+        border-color: $color-primary;
+        .form__hover {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__hover {
+    display: none;
+    position: absolute;
+    background-color: $color-primary;
+    padding: 15px;
+    width: 200px;
+    top: 48px;
+    right: -16px;
+    z-index: 100;
+    color: $color-white;
+    font-size: 15px;
+    border-radius: 6px;
+
+    &:before {
+      content: '\A';
+      position: absolute;
+      top: -9px;
+      right: 17px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+
+      border-bottom: 10px solid $color-primary;
+    }
+  }
+
+}
