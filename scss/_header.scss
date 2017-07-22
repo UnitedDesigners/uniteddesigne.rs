@@ -3,7 +3,10 @@
     padding: 30px;
     padding-bottom: 88px;
 
-    background-image: $primary-gradient;
+    background-image: url('/img/pattern-top-mask.svg'), $primary-gradient;
+    background-repeat: no-repeat;
+    background-position: center top;
+
 
     @media #{$tablet}
     {
