@@ -1,14 +1,14 @@
 .header
 {
     padding: 30px;
-    padding-bottom: 70px;
+    padding-bottom: 88px;
 
     background-image: $primary-gradient;
 
     @media #{$tablet}
     {
         padding: 75px;
-        padding-bottom: 100px;
+        padding-bottom: 118px;
 
         text-align: center;
 
@@ -20,7 +20,7 @@
 
     @media #{$desktop}
     {
-        padding-bottom: 210px;
+        padding-bottom: 228px;
 
         & > div
         {

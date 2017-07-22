@@ -26,18 +26,18 @@
 
         @media #{$tablet}
         {
-            top: -100px;
+            top: -118px;
         }
 
         @media #{$desktop} {
-          top: -115px;
+          top: -133px;
         }
     }
     &__cards
     {
         display: flex;
 
-        height: 250px;
+        height: 232px;
 
         justify-content: space-between;
 
@@ -45,6 +45,22 @@
           height: 800px;
           padding: 40px;
           flex-wrap: wrap;
+        }
+
+        svg {
+          height: 18px;
+          width: 100%;
+          position: absolute;
+          top: -12px;
+          left: 0;
+
+          @media #{$tablet} {
+            top: -15px;
+          }
+
+          @media #{$desktop} {
+            top: -17px;
+          }
         }
 
         button
@@ -102,7 +118,7 @@
 
         @media #{$tablet}
         {
-            &:nth-child(-n+4)
+            &:nth-of-type(-n+3)
             {
                 display: flex;
 
@@ -110,14 +126,14 @@
                 margin-left: 10px;
             }
 
-            &:nth-child(2)
+            &:nth-of-type(1)
             {
                 padding-right: 25px;
 
                 border-right: 1px solid $color-lightgrey;
             }
 
-            &:nth-child(4)
+            &:nth-of-type(3)
             {
                 padding-left: 25px;
 
@@ -127,27 +143,30 @@
 
         @media #{$desktop} {
           display: flex;
-          width: 33%;
-          height: 33%;
+          width: 33.2%;
+          height: 33.2%;
           margin: 0;
 
-          &:nth-child(-n+7) {
-            border-bottom: 1px solid $color-lightgrey;
-          }
-
-          &:nth-child(3n-7) {
-            border-right: 1px solid $color-lightgrey;
-          }
-
-          &:nth-child(3n-5) {
-            border-left: 1px solid $color-lightgrey;
-          }
-
-          &:nth-child(-n+4), &:nth-child(4), &:nth-child(2)
+          &:nth-of-type(-n+3), &:nth-of-type(3), &:nth-of-type(1)
           {
               margin: 0;
               padding: 0;
+              border: 0;
           }
+
+          &:nth-of-type(-n+6) {
+            border-bottom: 1px solid $color-lightgrey;
+          }
+
+          &:nth-of-type(3n-7) {
+            border-right: 1px solid $color-lightgrey;
+          }
+
+          &:nth-of-type(3n-7) {
+            border-left: 1px solid $color-lightgrey;
+          }
+
+
 
         }
 
