@@ -33,7 +33,8 @@ button
 
     @include TYPE-FormButton;
 
-    @media #{$desktop} {
-      height: 46px;
+    @media #{$desktop}
+    {
+        height: 46px;
     }
 }

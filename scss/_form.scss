@@ -36,9 +36,10 @@
                 margin: 0 auto;
             }
 
-            @media #{$desktop} {
-              max-width: 800px;
-              margin-bottom: 30px;
+            @media #{$desktop}
+            {
+                max-width: 800px;
+                margin-bottom: 30px;
             }
         }
     }
@@ -109,9 +110,11 @@
             }
         }
 
-        textarea {
-          resize: vertical;
-          height: 160px;
+        textarea
+        {
+            height: 160px;
+
+            resize: vertical;
         }
 
         span
