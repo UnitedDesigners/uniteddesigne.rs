@@ -71,6 +71,7 @@
             height: 100%;
 
             color: $color-primary;
+            border-radius: 0;
             background: 0;
 
             @media #{$desktop} {
