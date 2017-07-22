@@ -18,6 +18,17 @@
         }
     }
 
+    @media #{$desktop}
+    {
+        padding-bottom: 150px;
+
+        & > div
+        {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    }
+
     .logo
     {
         width: 130px;
@@ -49,6 +60,11 @@
         margin-bottom: 0;
 
         @include TYPE-HeaderH3;
+
+        @media #{$desktop}
+        {
+            margin-top: 80px;
+        }
     }
 
 
