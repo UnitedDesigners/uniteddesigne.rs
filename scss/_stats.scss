@@ -17,34 +17,80 @@
         text-align: center;
 
         @include TYPE-HeaderH2;
+
+        @media #{$tablet}
+        {
+          top: -100px;
+        }
+    }
+    &__cards {
+      height: 250px;
+      display: flex;
+      justify-content: space-between;
+
+
+      button
+      {
+          float: left;
+
+          width: 20%;
+          height: 100%;
+
+          color: $color-primary;
+          background: 0;
+      }
+
+      &_count
+      {
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+
+          width: 100%;
+
+          text-align: center;
+
+          @include TYPE-StatsCount;
+      }
     }
 
     &__card
     {
-        display: flex;
+        height: 150px;
+        width: 210px;
 
-        height: 210px;
-
+        flex-wrap: wrap;
+        flex-direction: column;
         align-items: center;
-        button
-        {
-            float: left;
+        justify-content: center;
+        margin-top: 45px;
+        text-align: center;
 
-            width: 20%;
-            height: 100%;
+        display: none;
 
-            color: $color-primary;
-            background: 0;
+        &:first-of-type {
+          display: flex;
         }
 
-        div
+        @media #{$tablet}
         {
-            float: left;
+          &:nth-child(-n+4) {
+            display: flex;
+            margin-left: 10px;
+            margin-right: 10px;
+          }
 
-            width: 60%;
+          &:nth-child(2) {
+            border-right: 1px solid $color-lightgrey;
+            padding-right: 25px;
+          }
 
-            text-align: center;
+          &:nth-child(4) {
+            border-left: 1px solid $color-lightgrey;
+            padding-left: 25px;
+          }
         }
+
 
         &_num
         {
@@ -53,28 +99,11 @@
 
         &_desc
         {
-            font-size: 14px;
-            line-height: 1.33;
 
-            width: 180px;
             margin: 5px;
-
-            color: $color-grey;
 
             @include TYPE-StatsText;
         }
 
-        &_count
-        {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-
-            width: 100%;
-
-            text-align: center;
-
-            @include TYPE-StatsCount;
-        }
     }
 }
