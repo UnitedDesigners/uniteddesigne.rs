@@ -6,11 +6,8 @@
 
     background-color: $color-white;
 
-    h3
+    h2
     {
-        font-size: 24px;
-        font-weight: 300;
-
         position: absolute;
         top: -75px;
 
@@ -18,7 +15,7 @@
 
         text-align: center;
 
-        color: $color-primary;
+        @include TYPE-HeaderH2;
     }
 
     &__card
@@ -50,9 +47,7 @@
 
         &_num
         {
-            font-size: 30px;
-
-            color: $color-secondary;
+            @include TYPE-StatsNum;
         }
 
         &_desc
@@ -64,12 +59,12 @@
             margin: 5px;
 
             color: $color-grey;
+
+            @include TYPE-StatsText;
         }
 
         &_count
         {
-            font-size: 14px;
-
             position: absolute;
             bottom: 20px;
             left: 0;
@@ -78,7 +73,7 @@
 
             text-align: center;
 
-            color: $color-bluegrey;
+            @include TYPE-StatsCount;
         }
     }
 }

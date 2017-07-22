@@ -5,39 +5,30 @@
 
     background-image: $primary-gradient;
 
-    h2
+    h1
     {
-        font-size: 36px;
-        font-weight: 300;
-        line-height: 1.17;
-
         margin-bottom: 5px;
 
         color: $color-primary;
+
+        @include TYPE-HeaderH1();
     }
 
     &__tagline
     {
-        font-size: 24px;
-        line-height: 1.33;
+        @include TYPE-ParagraphTagline;
     }
 
-    h4
+    h3
     {
-        font-size: 20px;
-        font-weight: 300;
-        line-height: 1.2;
-
         margin-bottom: 0;
 
-        letter-spacing: 3px;
-        text-transform: uppercase;
+        @include TYPE-HeaderH3;
     }
 
 
     &__desc
     {
-        font-size: 18px;
-        line-height: 1.44;
+        @include TYPE-ParagraphBody;
     }
 }
