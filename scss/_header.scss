@@ -1,7 +1,7 @@
 .header
 {
     padding: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 70px;
 
     background-image: $primary-gradient;
 
@@ -21,6 +21,7 @@
 
     h3
     {
+        margin-top: 45px;
         margin-bottom: 0;
 
         @include TYPE-HeaderH3;
