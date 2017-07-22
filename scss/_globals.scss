@@ -32,4 +32,8 @@ button
     background-color: $color-primary;
 
     @include TYPE-FormButton;
+
+    @media #{$desktop} {
+      height: 46px;
+    }
 }

@@ -2,6 +2,12 @@
 {
     text-align: center;
 
+    @media #{$desktop}
+    {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
     & > h2
     {
         margin-top: 30px;
@@ -25,6 +31,12 @@
         {
             width: 350px;
             margin: 0 auto 30px auto;
+        }
+
+        @media #{$desktop}
+        {
+            width: 100%;
+            margin: 0 auto 50px auto;
 
         }
 
@@ -73,12 +85,18 @@
 
             @media #{$tablet}
             {
-                width: 340px;
+                width: 45%;
 
                 &:nth-child(-n+4)
                 {
                     display: inline-flex;
                 }
+            }
+
+            @media #{$desktop}
+            {
+                display: inline-flex;
+                width: 30%;
             }
         }
 
