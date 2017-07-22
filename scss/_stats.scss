@@ -8,7 +8,6 @@
 
     h2
     {
-
         position: absolute;
         top: -70px;
 
@@ -20,75 +19,86 @@
 
         @media #{$tablet}
         {
-          top: -100px;
+            top: -100px;
         }
     }
-    &__cards {
-      height: 250px;
-      display: flex;
-      justify-content: space-between;
+    &__cards
+    {
+        display: flex;
+
+        height: 250px;
+
+        justify-content: space-between;
 
 
-      button
-      {
-          float: left;
+        button
+        {
+            float: left;
 
-          width: 20%;
-          height: 100%;
+            width: 20%;
+            height: 100%;
 
-          color: $color-primary;
-          background: 0;
-      }
+            color: $color-primary;
+            background: 0;
+        }
 
-      &_count
-      {
-          position: absolute;
-          bottom: 20px;
-          left: 0;
+        &_count
+        {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
 
-          width: 100%;
+            width: 100%;
 
-          text-align: center;
+            text-align: center;
 
-          @include TYPE-StatsCount;
-      }
+            @include TYPE-StatsCount;
+        }
     }
 
     &__card
     {
-        height: 150px;
-        width: 210px;
-
-        flex-wrap: wrap;
+        display: none;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+
+        width: 210px;
+        height: 150px;
         margin-top: 45px;
+
         text-align: center;
 
-        display: none;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
 
-        &:first-of-type {
-          display: flex;
+        &:first-of-type
+        {
+            display: flex;
         }
 
         @media #{$tablet}
         {
-          &:nth-child(-n+4) {
-            display: flex;
-            margin-left: 10px;
-            margin-right: 10px;
-          }
+            &:nth-child(-n+4)
+            {
+                display: flex;
 
-          &:nth-child(2) {
-            border-right: 1px solid $color-lightgrey;
-            padding-right: 25px;
-          }
+                margin-right: 10px;
+                margin-left: 10px;
+            }
 
-          &:nth-child(4) {
-            border-left: 1px solid $color-lightgrey;
-            padding-left: 25px;
-          }
+            &:nth-child(2)
+            {
+                padding-right: 25px;
+
+                border-right: 1px solid $color-lightgrey;
+            }
+
+            &:nth-child(4)
+            {
+                padding-left: 25px;
+
+                border-left: 1px solid $color-lightgrey;
+            }
         }
 
 
@@ -99,11 +109,9 @@
 
         &_desc
         {
-
             margin: 5px;
 
             @include TYPE-StatsText;
         }
-
     }
 }
