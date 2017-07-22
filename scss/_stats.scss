@@ -16,7 +16,7 @@
     h2
     {
         position: absolute;
-        top: -70px;
+        top: -80px;
 
         width: 100%;
 
@@ -50,25 +50,6 @@
             flex-wrap: wrap;
         }
 
-        svg
-        {
-            position: absolute;
-            top: -12px;
-            left: 0;
-
-            width: 100%;
-            height: 18px;
-
-            @media #{$tablet}
-            {
-                top: -15px;
-            }
-
-            @media #{$desktop}
-            {
-                top: -17px;
-            }
-        }
 
         button
         {
@@ -103,6 +84,35 @@
             {
                 display: none;
             }
+        }
+
+        // Pseudo Elements for creating negative space arrow
+        &::before
+        {
+            position: absolute;
+            top: -16px;
+            left: 0;
+
+            width: 49%;
+
+            content: '';
+
+            border-right: 16px solid transparent;
+            border-bottom: 16px solid #fff;
+        }
+
+        &::after
+        {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+
+            width: calc(50% - 16px);
+
+            content: '';
+
+            border-bottom: 16px solid #fff;
+            border-left: 16px solid transparent;
         }
     }
 
