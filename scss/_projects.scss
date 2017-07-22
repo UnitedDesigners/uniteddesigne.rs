@@ -21,6 +21,13 @@
 
         @include TYPE-ParagraphDescriptor;
 
+        @media #{$tablet}
+        {
+            width: 350px;
+            margin: 0 auto 30px auto;
+
+        }
+
         a
         {
             text-decoration: none;
