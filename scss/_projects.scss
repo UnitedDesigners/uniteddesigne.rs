@@ -73,7 +73,7 @@
             display: none;
 
             box-sizing: border-box;
-            width: 100%;
+            width: 340px;
             height: 290px;
             margin: 15px 0;
             padding: 30px;
@@ -94,6 +94,7 @@
             {
                 width: 340px;
                 height: 305px;
+                margin: 5px 0;
 
                 &:nth-child(-n+4)
                 {
@@ -104,6 +105,7 @@
             @media #{$desktop}
             {
                 display: inline-flex;
+                margin: 20px 0;
                 width: 340px;
             }
         }
