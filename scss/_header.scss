@@ -23,7 +23,7 @@
 
     @media #{$desktop}
     {
-        padding-bottom: 228px;
+        padding-bottom: 185px;
 
         & > div
         {
@@ -34,12 +34,22 @@
 
     .logo
     {
-        width: 130px;
+        width: 220px;
         margin-bottom: 20px;
+
+        img {
+          width: 100%;
+        }
+
 
         @media #{$tablet}
         {
+            width: 300px;
             margin: 0 auto;
+        }
+
+        @media #{$desktop} {
+          width: 400px;
         }
     }
 
@@ -66,7 +76,7 @@
 
         @media #{$desktop}
         {
-            margin-top: 80px;
+            margin-top: 55px;
         }
     }
 
