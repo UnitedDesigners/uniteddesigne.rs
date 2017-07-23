@@ -91,7 +91,8 @@
 
             @media #{$tablet}
             {
-                width: 45%;
+                width: 340px;
+                height: 305px;
 
                 &:nth-child(-n+4)
                 {
@@ -102,7 +103,7 @@
             @media #{$desktop}
             {
                 display: inline-flex;
-                width: 30%;
+                width: 340px;
             }
         }
 
