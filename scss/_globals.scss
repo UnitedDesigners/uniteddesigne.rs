@@ -33,6 +33,11 @@ button
 
     @include TYPE-FormButton;
 
+    &:hover
+    {
+        background-color: $color-secondary;
+    }
+
     @media #{$desktop}
     {
         height: 46px;
