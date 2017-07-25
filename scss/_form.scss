@@ -53,6 +53,7 @@
         }
     }
 
+
     form
     {
         position: relative;
@@ -80,6 +81,7 @@
         {
             margin-top: 15px;
 
+
             @media #{$tablet}
             {
                 position: absolute;
@@ -88,6 +90,10 @@
 
                 width: 300px;
             }
+        }
+
+        .form__success {
+          background-color: #3AC89E;
         }
     }
 
@@ -158,6 +164,20 @@
                     display: block;
                 }
             }
+        }
+
+        .form__invalid {
+          background-color: $color-form-error;
+          border-color: $color-primary;
+
+          &::placeholder {
+            color: $color-primary;
+          }
+
+          & + span {
+            border-color: $color-primary;
+            color: $color-primary;
+          }
         }
     }
 
