@@ -1,65 +1,216 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600|Roboto+Slab:700">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="shortcut icon" href="assets/favicon.ico"/>
-    <title>United Designers - A Slack community for designers</title>
-  </head>
-  <body>
-    <canvas id="stars"></canvas>
-    <div class="mobilewrap">
-      <div class="wrapper">
-        <div class="logo"></div>
-        <div class="title">
-          <h1>A Slack community for designers</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>United Designers</title>
+
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://uniteddesigners.chat" />
+  <meta property="og:description" content="We are United Designers, a global community of designers and developers who share a passion for creating." />
+  <meta property="og:image" content="https://uniteddesigners.chat/img/preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600|Raleway:800" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">
+      <img class="logo--horiz" src="img/horiz-logo.svg">
+    </div>
+    <div>
+      <h1>A Slack Community for Designers</h1>
+      <p class="header__tagline">We are United Designers, a not for profit global community of designers and developers who share a passion for creating. We have a mix of channels geared towards serious design discussion and professional help as well as channels for day-to-day chatting and inspiration.</p>
+      <a href="#form"><button>Join Us</button></a>
+    </div>
+  </div>
+    <div class="stats">
+      <h2>Number Crunching</h2>
+
+      <div class="stats__cards">
+        <button id="stats__prev"><</button>
+        <div class="stats__card">
+          <span class="stats__card_num">586K</span>
+          <p class="stats__card_desc">total messages since July 18, 2016.</p>
         </div>
-        <div class="about">
-          <p class="main">We are United Designers, a global community of designers and developers who share a passion for creating. We&rsquo;re not for profit. Some of our most popular channels include:</p>
-          <div class="channels">
-            <p><span>#feedback-and-roasts</span> for sharing work and getting advice,</p>
-            <p><span>#design</span> for staying current with the latest trends &amp; techniques,</p>
-            <p><span>#how-to</span> for when you need help from the pros,</p>
-            <p><span>#inspiration</span> from everywhere, anytime,</p>
-            <p><span>#jobs, #prototyping, #frontend, #software</span>... plus emojis <a href="https://uniteddesigners.slack.com/" target="_blank"><img src="assets/slack.png"></a></p>
-          </div>
+        <div class="stats__card">
+          <span class="stats__card_num">29,809</span>
+          <p class="stats__card_desc">messages in the last 30 days.</p>
         </div>
-        <div class="pad"></div>
-        <div class="apply">
-          <p>If you&rsquo;re a professional designer, front-end dev, or an aspiring student, you can apply below:</p>
-          <form id="apply-form">
-            <div id="name-cont">
-              <input type="text" id="name" name="name" required placeholder=" ">
-              <label for="name">Name *</label>
-            </div>
-            <div id="email-cont">
-              <input type="email" id="email" name="email" required placeholder=" ">
-              <label for="email">Email *</label>
-            </div>
-            <div id="location-cont">
-              <input type="text" id="location" name="location" required placeholder=" ">
-              <label for="location">Location *</label>
-            </div>
-            <div id="field-cont">
-              <input type="text" id="field" name="field" required placeholder=" ">
-              <label for="field">Field *</label>
-            </div>
-            <div id="portfolio-cont">
-              <input type="text" id="portfolio" name="portfolio" placeholder=" ">
-              <label for="portfolio">Portfolio</label>
-            </div>
-            <div id="comments-cont">
-              <textarea id="comments" name="comments" required placeholder=" "></textarea>
-              <label for="comments">Tell us a bit about yourself and your work *</label>
-            </div>
-            <button type="submit">Apply</button>
-          </form>
+        <div class="stats__card">
+          <span class="stats__card_num">6,291</span>
+          <p class="stats__card_desc">messages in the last week.</p>
         </div>
-        <div class="foot"></div>
-        <img id="mtns" src="assets/mtns.png">
+        <div class="stats__card">
+          <span class="stats__card_num">85</span>
+          <p class="stats__card_desc">active users on average per week.</p>
+        </div>
+        <div class="stats__card">
+          <span class="stats__card_num">8,303</span>
+          <p class="stats__card_desc">messages in #chit-chat in the last 30 days.</p>
+        </div>
+        <div class="stats__card">
+          <span class="stats__card_num">2,583</span>
+          <p class="stats__card_desc">messages in #feedback-and-roasts in the last 30 days.</p>
+        </div>
+        <div class="stats__card">
+          <span class="stats__card_num">1,317</span>
+          <p class="stats__card_desc">messages in #design in the last 30 days.</p>
+        </div>
+        <div class="stats__card">
+          <span class="stats__card_num">1,241</span>
+          <p class="stats__card_desc">messages in #jobs in the last 30 days.</p>
+        </div>
+        <div class="stats__card">
+          <span class="stats__card_num">259</span>
+          <p class="stats__card_desc">custom emojis avaliable for posts and reactions</p>
+        </div>
+        <span class="stats__cards_count"><span id="stats__active">1</span>/<span id="stats__total">9</span></span>
+        <button id="stats__next">></button>
+
       </div>
     </div>
-    <script src="main.js"></script>
+
+    <div class="projects">
+      <h2>What We're Up To</h2>
+      <p>Check out some of the latest work from <a href="https://dribbble.com/uniteddesigners" target="_blank">our team Dribbble</a> feed!</p>
+      <div class="projects__cards">
+        <div class="projects__card--dribbble">
+          <a target="_blank" href="https://dribbble.com/shots/3647363-Arrowhead-National-Park-Logo">
+            <img src="https://cdn.dribbble.com/users/1448976/screenshots/3647363/alogo2.jpg" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/1448976/avatars/small/c964078abdc11226e2b0449bee5ee824.jpg" /> Logan Bingaman</p>
+          </a>
+
+        </div>
+
+        <div class="projects__card--dribbble">
+          <a href="https://dribbble.com/shots/3644885-Burn" target="_blank">
+            <img src="https://cdn.dribbble.com/users/174510/screenshots/3644885/burn2.gif" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/174510/avatars/small/f1a389281084ae447237c61dee630ed0.png?" /> Lukasz Wieczorek</p>
+          </a>
+
+        </div>
+
+        <div class="projects__card--dribbble">
+          <a href="https://dribbble.com/shots/3638143-Dashboard-Icons" target="_blank">
+            <img src="https://cdn.dribbble.com/users/225707/screenshots/3638143/dashboard_1x.png" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/225707/avatars/small/fd9601527afd1e42ba661129d2bc9d70.jpg?" /> Jackson Walker</p>
+          </a>
+
+        </div>
+
+        <div class="projects__card--dribbble">
+          <a href="https://dribbble.com/shots/3643877-Kings-of-Kings" target="_blank">
+            <img src="https://cdn.dribbble.com/users/1448976/screenshots/3643877/cryusthegreat_1x.jpg" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/1448976/avatars/small/c964078abdc11226e2b0449bee5ee824.jpg" /> Logan Bingaman</p>
+          </a>
+
+        </div>
+
+        <div class="projects__card--dribbble">
+          <a href="https://dribbble.com/shots/3629141-Subpoly-displacement-with-noise" target="_blank">
+            <img src="https://cdn.dribbble.com/users/225707/screenshots/3629141/subpoly-displacement-c4d.gif" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/225707/avatars/small/fd9601527afd1e42ba661129d2bc9d70.jpg?1498273303" /> Jackson Walker</p>
+          </a>
+        </div>
+
+        <div class="projects__card--dribbble">
+          <a href="https://dribbble.com/shots/3564496-Scifi-Ring" target="_blank">
+            <img src="https://cdn.dribbble.com/users/174510/screenshots/3564496/ring-dribbble.gif" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/174510/avatars/small/f1a389281084ae447237c61dee630ed0.png?" /> Lukasz Wieczorek</p>
+          </a>
+        </div>
+      </div>
+      <a href="https://dribbble.com/uniteddesigners" target="_blank"><button>View More</button></a>
+    </div>
+
+    <div class="form">
+      <div class="form__desc">
+        <h2 id="form">Join Us!</h2>
+        <p>We're always looking for people who love design, from students all the way to professionals. If this sounds like you, go ahead and apply below! Take your time, since we do read through these when accepting or denying applications.</p>
+      </div>
+      <form>
+        <div class="form__inputgroup">
+          <label for="name">Name *</label>
+          <div class="form__input">
+            <input type="text" name="name" value="">
+            <span>
+              i
+              <div class="form__hover">
+                Your full name.
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="form__inputgroup">
+          <label for="email">Email *</label>
+          <div class="form__input">
+            <input type="email" name="email" value="">
+            <span>
+              i
+              <div class="form__hover">
+                We'll send your invite to this address.
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="form__inputgroup">
+          <label for="location">Location *</label>
+          <div class="form__input">
+            <input type="text" name="location" value="">
+            <span>
+              i
+              <div class="form__hover">
+                Where you live in general terms. We organize events in a few areas and would love for you to join us!
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="form__inputgroup">
+          <label for="field">Field *</label>
+          <div class="form__input">
+            <input type="text" name="field" value="">
+            <span>
+              i
+              <div class="form__hover">
+                The field or profession you're involved in, or what you're studying.
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="form__inputgroup">
+          <label for="website">Portfolio / Website / Social Media *</label>
+          <div class="form__input">
+            <input type="text" name="portfolio" value="">
+            <span>
+              i
+              <div class="form__hover">
+                A website, portfolio, or online snippet of your work.
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="form__inputgroup">
+          <label for="comments">Tell us a bit about yourself and your work *</label>
+          <div class="form__input">
+            <textarea name="comments"></textarea>
+            <span>
+              i
+              <div class="form__hover">
+              Tell us a bit about yourself and what you're working on.
+              </div>
+            </span>
+          </div>
+        </div>
+        <button id="form__submit">Apply</button>
+      </form>
+    </div>
+    <script src="/js/main.js" charset="utf-8"></script>
   </body>
-</html>
+
+  </html>

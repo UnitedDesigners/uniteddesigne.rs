@@ -1,0 +1,27 @@
+
+// Typography
+$type-header: 'Raleway', sans-serif;
+$type-num: 'RT Raleway', 'Fira Sans', sans-serif;
+$type-body: 'Fira Sans', sans-serif;
+
+// Colors
+$color-primary: #ff6679;
+$color-secondary: #369bd8;
+
+$color-white: #fff;
+$color-grey: #78848b;
+$color-bluegrey: #a9b9c2;
+$color-lightgrey: #cfd9df;
+$color-deep-blue: #162149;
+
+$color-gradient-blue: #1e3381;
+$color-gradient-purple: #5c247d;
+
+$color-form-error: #FCF4F5;
+
+// Gradients
+$primary-gradient: linear-gradient(163deg, $color-gradient-blue, $color-gradient-purple);
+
+// Sizes
+$tablet: '(min-width: 720px)';
+$desktop: '(min-width: 1180px)';
