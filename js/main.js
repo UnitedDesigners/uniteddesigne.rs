@@ -1,3 +1,13 @@
+// Polyfill because Safari's HTMLCollections are not iterable
+  if (typeof HTMLCollection.prototype[Symbol.iterator] !== 'function') {
+    HTMLCollection.prototype[Symbol.iterator] = function () {
+      let i = 0;
+      return {
+        next: () => ({done: i >= this.length, value: this.item(i++)})
+      }
+    };
+  }
+
 const DESKTOP = window.matchMedia( "(min-width: 1180px)" );
 const TABLET = window.matchMedia( "(min-width: 720px)" );
 
@@ -97,7 +107,7 @@ function submit(e) {
   e.preventDefault();
   let data = {}
 
-  for (const input of e.target) {
+  for (const input of e.target.querySelectorAll('input, textarea')) {
     if (input.tagName !== 'BUTTON') {
       if (validateInput(input)) {
         data[input.name] = input.value;
@@ -118,6 +128,7 @@ function submit(e) {
     body: JSON.stringify(data)
   };
 
+
   fetch('https://kzl0zkdru3.execute-api.us-west-2.amazonaws.com/testing/applications', options).then((response) =>{
     if(response.ok) {
       const submitButton = document.getElementById('form__submit');
@@ -125,7 +136,7 @@ function submit(e) {
       submitButton.innerHTML = "Application Sent!"
       submitButton.disabled = true;
 
-      for (const input of e.target) {
+      for (const input of e.target.children) {
         input.disabled = true;
       }
     }
