@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>United Designers</title>
 
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600|Raleway:800" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600|Raleway:800" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
   <div class="header">
     <div class="logo">
@@ -17,18 +19,14 @@
     <div>
       <h1>A Slack Community for Designers</h1>
       <p class="header__tagline">
-        We are United Designers, a global community of designers and developers
-        who share a passion for creating. We are not for profit.
+        We are United Designers, a global community of designers and developers who share a passion for creating. We are not for profit.
       </p>
       <a href="#form"><button>Join Us</button></a>
     </div>
     <div>
       <h3>What you're getting into</h3>
       <p class="header__desc">
-        Our community has a mix of channels geared towards serious design
-        discussion and professional help as well as channels for day-to-day
-        chatting and inspiration. We always have several ongoing collaborative
-        projects, so join in on those if you want!
+        Our community has a mix of channels geared towards serious design discussion and professional help as well as channels for day-to-day chatting and inspiration. We always have several ongoing collaborative projects, so join in on those if you want!
       </div>
     </div>
 
@@ -36,7 +34,7 @@
       <h2>Number Crunching</h2>
 
       <div class="stats__cards">
-        <button><</button>
+        <button id="stats__prev"><</button>
         <div class="stats__card">
           <span class="stats__card_num">546K</span>
           <p class="stats__card_desc">total messages since July 18, 2016</p>
@@ -73,8 +71,8 @@
           <span class="stats__card_num">2,759</span>
           <p class="stats__card_desc">messages on the most active day last week</p>
         </div>
-        <span class="stats__cards_count">1/9</span>
-        <button>></button>
+        <span class="stats__cards_count"><span id="stats__active">1</span>/<span id="stats__total">9</span></span>
+        <button id="stats__next">></button>
 
       </div>
     </div>
@@ -83,45 +81,50 @@
       <h2>What We're Up To</h2>
       <p>Check out some of the latest work from <a>our team Dribbble</a> feed!</p>
       <div class="projects__cards">
-        <a href="https://dribbble.com/shots/3647363-Arrowhead-National-Park-Logo">
         <div class="projects__card--dribbble">
-          <img src="https://cdn.dribbble.com/users/1448976/screenshots/3647363/alogo2.jpg" />
-          <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/1448976/avatars/small/c964078abdc11226e2b0449bee5ee824.jpg" /> Logan Bingaman</p>
-        </div>
-        </a>
+          <a href="https://dribbble.com/shots/3647363-Arrowhead-National-Park-Logo">
+            <img src="https://cdn.dribbble.com/users/1448976/screenshots/3647363/alogo2.jpg" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/1448976/avatars/small/c964078abdc11226e2b0449bee5ee824.jpg" /> Logan Bingaman</p>
+          </a>
 
-        <a href="https://dribbble.com/shots/3644885-Burn">
-        <div class="projects__card--dribbble">
-          <img src="https://cdn.dribbble.com/users/174510/screenshots/3644885/burn2.gif" />
-          <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/174510/avatars/small/f1a389281084ae447237c61dee630ed0.png?" /> Lukasz Wieczorek</p>
         </div>
-        </a>
 
-        <a href="https://dribbble.com/shots/3638143-Dashboard-Icons">
         <div class="projects__card--dribbble">
-          <img src="https://cdn.dribbble.com/users/225707/screenshots/3638143/dashboard_1x.png" />
-          <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/225707/avatars/small/fd9601527afd1e42ba661129d2bc9d70.jpg?" /> Jackson Walker</p>
+          <a href="https://dribbble.com/shots/3644885-Burn">
+            <img src="https://cdn.dribbble.com/users/174510/screenshots/3644885/burn2.gif" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/174510/avatars/small/f1a389281084ae447237c61dee630ed0.png?" /> Lukasz Wieczorek</p>
+          </a>
+
         </div>
-        </a>
 
-        <a href="https://dribbble.com/shots/3643877-Kings-of-Kings">
         <div class="projects__card--dribbble">
-          <img src="https://cdn.dribbble.com/users/1448976/screenshots/3643877/cryusthegreat_1x.jpg" />
-          <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/1448976/avatars/small/c964078abdc11226e2b0449bee5ee824.jpg" /> Logan Bingaman</p>
+          <a href="https://dribbble.com/shots/3638143-Dashboard-Icons">
+            <img src="https://cdn.dribbble.com/users/225707/screenshots/3638143/dashboard_1x.png" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/225707/avatars/small/fd9601527afd1e42ba661129d2bc9d70.jpg?" /> Jackson Walker</p>
+          </a>
+
         </div>
-        </a>
 
-        <a href="https://dribbble.com/shots/3629141-Subpoly-displacement-with-noise">
         <div class="projects__card--dribbble">
-          <img src="https://cdn.dribbble.com/users/225707/screenshots/3629141/subpoly-displacement-c4d.gif" />
-          <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/225707/avatars/small/fd9601527afd1e42ba661129d2bc9d70.jpg?1498273303" /> Jackson Walker</p>
+          <a href="https://dribbble.com/shots/3643877-Kings-of-Kings">
+            <img src="https://cdn.dribbble.com/users/1448976/screenshots/3643877/cryusthegreat_1x.jpg" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/1448976/avatars/small/c964078abdc11226e2b0449bee5ee824.jpg" /> Logan Bingaman</p>
+          </a>
+
         </div>
-        </a>
 
-        <a href="https://dribbble.com/shots/3564496-Scifi-Ring"></a>
         <div class="projects__card--dribbble">
-          <img src="https://cdn.dribbble.com/users/174510/screenshots/3564496/ring-dribbble.gif" />
-          <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/174510/avatars/small/f1a389281084ae447237c61dee630ed0.png?" /> Lukasz Wieczorek</p>
+          <a href="https://dribbble.com/shots/3629141-Subpoly-displacement-with-noise">
+            <img src="https://cdn.dribbble.com/users/225707/screenshots/3629141/subpoly-displacement-c4d.gif" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/225707/avatars/small/fd9601527afd1e42ba661129d2bc9d70.jpg?1498273303" /> Jackson Walker</p>
+          </a>
+        </div>
+
+        <div class="projects__card--dribbble">
+          <a href="https://dribbble.com/shots/3564496-Scifi-Ring">
+            <img src="https://cdn.dribbble.com/users/174510/screenshots/3564496/ring-dribbble.gif" />
+            <p class="projects__avatar"><img src="https://cdn.dribbble.com/users/174510/avatars/small/f1a389281084ae447237c61dee630ed0.png?" /> Lukasz Wieczorek</p>
+          </a>
         </div>
       </div>
       <a href="https://dribbble.com/uniteddesigners"><button>View More</button></a>
@@ -208,5 +211,7 @@
         <button>Apply</button>
       </form>
     </div>
-</body>
-</html>
+    <script src="/js/main.js" charset="utf-8"></script>
+  </body>
+
+  </html>
