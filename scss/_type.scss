@@ -28,22 +28,22 @@
 @mixin TYPE-HeaderH1()
 {
     font-family: $type-header;
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 800;
-    line-height: 42px;
+    line-height: 38px;
 
     color: $color-primary;
 
     @media #{$tablet}
     {
-        font-size: 50px;
-        line-height: 54px;
+        font-size: 36px;
+        line-height: 40px;
     }
 
     @media #{$desktop}
     {
-        font-size: 60px;
-        line-height: 66px;
+        font-size: 46px;
+        line-height: 56px;
     }
 }
 
@@ -83,22 +83,16 @@
 @mixin TYPE-ParagraphTagline()
 {
     font-family: $type-body;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 300;
-    line-height: 32px;
+    line-height: 26px;
 
     color: $color-white;
 
     @media #{$tablet}
     {
-        font-size: 26px;
-        line-height: 36px;
-    }
-
-    @media #{$desktop}
-    {
-        font-size: 30px;
-        line-height: 40px;
+        font-size: 20px;
+        line-height: 30px;
     }
 }
 
