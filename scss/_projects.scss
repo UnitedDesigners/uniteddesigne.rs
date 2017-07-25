@@ -16,10 +16,14 @@
 
     & > h2
     {
-        margin-top: 10px;
+        margin-top: 45px;
         margin-bottom: 16px;
 
         @include TYPE-HeaderH2;
+
+        @media #{$desktop} {
+          margin-top: 10px;
+        }
 
     }
 
