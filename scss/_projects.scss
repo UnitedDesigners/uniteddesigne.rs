@@ -57,7 +57,6 @@
     &__cards
     {
         display: flex;
-
         flex-wrap: wrap;
         justify-content: space-around;
     }
@@ -70,6 +69,7 @@
             position: relative;
 
             display: none;
+            justify-content: center;
 
             box-sizing: border-box;
             width: 340px;
@@ -80,8 +80,6 @@
             text-align: left;
 
             background-color: $color-white;
-
-            justify-content: center;
 
             &:nth-child(-n+2)
             {
@@ -125,15 +123,13 @@
             {
                 &::after
                 {
-                    font-family: $type-body;
-                    font-size: 22px;
-                    pointer-events: none;
-
                     position: absolute;
                     top: 0;
                     left: 0;
 
                     display: flex;
+                    align-items: center;
+                    justify-content: center;
 
                     box-sizing: border-box;
                     width: 100%;
@@ -142,6 +138,7 @@
 
                     content: 'View on Dribbble';
                     cursor: pointer;
+                    pointer-events: none;
 
                     opacity: .95;
                     color: white;
@@ -150,8 +147,8 @@
                     background-repeat: no-repeat;
                     background-position: center 41%;
 
-                    justify-content: center;
-                    align-items: center;
+                    font-family: $type-body;
+                    font-size: 22px;
                 }
             }
         }
@@ -177,13 +174,13 @@
         left: 20px;
 
         display: inline-flex;
+        align-items: center;
 
         margin: 0;
 
         color: $color-grey;
 
         @include TYPE-ProjectsAuthor;
-        align-items: center;
 
         @media #{$tablet} {
           bottom: 14px;
@@ -200,10 +197,11 @@
         }
     }
 
-    button
+    .pseudo-button
     {
         width: 260px;
         margin: 20px 0 30px 0;
+
         cursor: pointer;
 
         @media #{$tablet}
