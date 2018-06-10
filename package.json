@@ -1,0 +1,21 @@
+{
+  "name": "uniteddesigners.chat",
+  "version": "3.0.0",
+  "description": "Website for United Designers, a slack community for designers and developers.",
+  "main": "index.js",
+  "repository": "git@github.com:UnitedDesigners/uniteddesigners.chat.git",
+  "author": "George Sumpster <gsumpster@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "critical": "^1.3.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.0"
+  }
+}
