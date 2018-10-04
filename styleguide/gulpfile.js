@@ -5,31 +5,31 @@ connect = require('gulp-connect')
 watch = require('gulp-watch');
 
 gulp.task('html', function() {
-  return watch('**/*.html', function() {
-    gulp.src('**/*.html')
+  return watch('components/**/*.html', function() {
+    gulp.src('components/**/*.html')
       .pipe(connect.reload())
   })
 });
 
-// gulp.task('js', function() {
-//   var concat    = require('gulp-concat');
-//   var babel = require('gulp-babel');
-//   var plumber = require('gulp-plumber');
-//
-//
-//
-//   return watch(['vendor/js/**/*.js', 'components/**/*.js'], function() {
-//     gulp.src(['vendor/js/**/*.js', 'components/**/*.js'])
-//       .pipe(plumber())
-//       .pipe(babel({
-//             presets: ['env'],
-//             plugins: ["transform-object-rest-spread"]
-//           }))
-//       .pipe(concat('main.js'))
-//       .pipe(gulp.dest('dist/js'))
-//       .pipe(connect.reload())
-//   })
-// });
+gulp.task('js', function() {
+  var concat    = require('gulp-concat');
+  var babel = require('gulp-babel');
+  var plumber = require('gulp-plumber');
+
+
+
+  return watch(['vendor/js/**/*.js', 'components/**/*.js'], function() {
+    gulp.src(['vendor/js/**/*.js', 'components/**/*.js'])
+      .pipe(plumber())
+      .pipe(babel({
+            presets: ['env'],
+            plugins: ["transform-object-rest-spread"]
+          }))
+      .pipe(concat('main.js'))
+      .pipe(gulp.dest('dist/js'))
+      .pipe(connect.reload())
+  })
+});
 
 gulp.task('css', function () {
     var sass = require('gulp-sass');
@@ -62,8 +62,8 @@ gulp.task('css', function () {
       precss(),
     ];
 
-    return watch(['vendor/css/**/*.scss', 'scss/**/*.scss'], function () {
-      gulp.src('scss/main.scss')
+    return watch(['vendor/css/**/*.scss', 'components/**/*.scss'], function () {
+      gulp.src('components/main.min.scss')
           .pipe(plumber())
           .pipe( sourcemaps.init() )
           .pipe(sassGlob())
@@ -77,9 +77,9 @@ gulp.task('css', function () {
 });
 
 gulp.task('serve', function() {
-  connect.server({ host: '0.0.0.0', livereload: true });
+  connect.server({ host: '0.0.0.0', port: 8888, livereload: true });
 });
 
 
 
-gulp.task('default', ['html', 'css', 'serve']);
+gulp.task('default', ['html', 'css', 'js', 'serve']);

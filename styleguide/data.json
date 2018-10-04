@@ -1,0 +1,165 @@
+{
+    "project_logo": null,
+    "project_favicon": "favicon.png",
+    "project_name": null,
+    "project_url": null,
+    "copyright_start_year": null,
+    "client_name": null,
+    "client_url": null,
+    "creators": [
+        {
+            "name": "George Sumpster",
+            "url": "gsumpster.com"
+        }
+    ],
+    "theme": {
+        "border_color": "#E0E6ED",
+        "highlight_color": "#F9FAFC",
+        "brand_color": "#FF6679",
+        "background_color": "#FFFFFF",
+        "code_highlight_theme": "github",
+        "override_code_highlight_bg": "#F9FAFC",
+        "sample_dark_background": "#333333",
+        "show_project_name": true,
+        "show_version": false,
+        "max_width": null,
+        "titles": {
+            "library_title": "Pattern Library",
+            "pages_title": "Overview",
+            "components_title": "Components"
+        }
+    },
+    "assets": {
+        "css": [
+            "dist/css/main.min.css"
+        ],
+        "js": []
+    },
+    "font_libraries": {
+        "typekit_code": null,
+        "typography_web_fonts": null,
+        "google_web_fonts": null
+    },
+    "content": null,
+    "groups": [
+        {
+            "name": "branding",
+            "title": "Branding",
+            "components": [
+                {
+                    "group": "branding",
+                    "name": "typography",
+                    "title": "Font Families",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "colors",
+                    "title": "Primary Colors",
+                    "type": "colors",
+                    "colors": [
+                        "#FF6679",
+                        "#FFE66D",
+                        "#8AE1D7",
+                        "#556FCD"
+                    ],
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "typography",
+            "title": "Typography",
+            "components": [
+                {
+                    "group": "typography",
+                    "name": "headings",
+                    "title": "Headings"
+                },
+                {
+                    "group": "typography",
+                    "name": "body",
+                    "title": "Body"
+                },
+                {
+                    "group": "typography",
+                    "name": "other",
+                    "title": "Other"
+                }
+            ]
+        },
+        {
+            "name": "input",
+            "title": "Input Components",
+            "components": [
+                {
+                    "group": "input",
+                    "name": "text",
+                    "title": "Text Input",
+                    "width": "half"
+                },
+                {
+                    "group": "input",
+                    "name": "checkbox",
+                    "title": "Checkbox Input",
+                    "width": "half"
+                },
+                {
+                    "group": "input",
+                    "name": "textarea",
+                    "title": "Textarea Input"
+                },
+                {
+                    "group": "input",
+                    "name": "button",
+                    "title": "Button",
+                    "width": "half"
+                }
+            ]
+        },
+        {
+            "name": "cards",
+            "title": "Card Components",
+            "components": [
+                {
+                    "group": "cards",
+                    "name": "dribbble",
+                    "title": "Dribbble Card",
+                    "width": "half"
+                },
+                {
+                    "group": "cards",
+                    "name": "playlist",
+                    "title": "Playlist Card",
+                    "width": "half"
+                },
+                {
+                    "group": "cards",
+                    "name": "video",
+                    "title": "Video Card"
+                }
+            ]
+        },
+        {
+            "name": "headers",
+            "title": "Headers",
+            "components": [
+                {
+                    "group": "headers",
+                    "name": "hero",
+                    "title": "Hero Section"
+                },
+                {
+                    "group": "headers",
+                    "name": "funstuff",
+                    "title": "Fun Stuff Header"
+                }
+            ]
+        }
+    ],
+    "version": "1.9.5"
+}

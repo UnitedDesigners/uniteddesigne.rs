@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>_social/Isolated/Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.2758403,8.35741447 L13.2758403,6.57053186 C13.2758403,5.89947551 13.7203094,5.74278806 14.0333995,5.74278806 L15.9558815,5.74278806 L15.9558815,2.7925438 L13.3080636,2.78205013 C10.3688153,2.78205013 9.69993675,4.98258041 9.69993675,6.39070454 L9.69993675,8.35732478 L8,8.35732478 L8,11.3972585 L9.69993675,11.3972585 L9.69993675,20 L13.2758403,20 L13.2758403,11.3972585 L15.6879751,11.3972585 L16,8.35741447 L13.2758403,8.35741447 Z" id="path-1"></path>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="index-mobile" transform="translate(-207.000000, -152.000000)">
+            <g id="Group-28" transform="translate(97.000000, 150.000000)">
+                <g id="Group-7">
+                    <g id="_social/Isolated/Facebook" transform="translate(102.000000, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Facebook"></g>
+                        <g id="_colors/general_white" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                            <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

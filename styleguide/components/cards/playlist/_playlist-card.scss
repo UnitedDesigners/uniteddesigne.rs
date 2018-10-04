@@ -1,0 +1,10 @@
+.c-playlist-card {
+  margin: 30px;
+  img {
+    max-width: 320px;
+    max-height: 320px;
+    box-shadow: 0 0 20px 0 $color-shadow;
+    margin-bottom: 12px;
+    display: block;
+  }
+}

@@ -1,0 +1,126 @@
+$color-pink: #FF6679;
+$color-yellow: #FFE66D;
+$color-teal: #8AE1D7;
+$color-blue: #556FCD;
+
+$color-text: #162149;
+
+$color-input-bg: #F8FAFF;
+$color-input-border: #D2D6E5;
+$color-shadow: rgba(0,0,0,.1);
+
+$color-white: #ffffff;
+
+$max-width: 1336px;
+$breakpoint-xs: 375px;
+$breakpoint-sm: 568px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+@mixin xs {
+  @media (min-width: $breakpoint-xs) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+
+.l-about {
+  background-color: #0A1128;
+  padding: 25px 20px;
+
+  @include md {
+    padding: 60px 20px;
+  };
+
+  > .pure-g {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  &__text p {
+    color: $color-white;
+
+    @include md {
+      padding-left: 30px;
+
+    };
+  }
+}
+
+.l-join {
+  padding: 25px 20px;
+
+  @include md {
+    padding: 60px 20px;
+  };
+
+  > .pure-g {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  &__text p {
+    margin-bottom: 25px;
+
+    @include md {
+      max-width: 290px;
+    };
+  }
+
+
+}
+
+.l-form {
+  max-width: 700px;
+  margin: 20px auto;
+
+  &__input {
+    @include sm {
+      padding: 0 15px;
+      box-sizing: border-box;
+    };
+  }
+
+  @include md {
+    .c-button {
+      width: 200px;
+      margin: 15px;
+    }
+  };
+}
+
+.l-dribbble {
+  max-width: 1100px;
+  margin: 20px auto;
+
+  @include md {
+    .t-body {
+      margin-right: 50px;
+    }
+  };
+}

@@ -1,0 +1,142 @@
+.c-hero {
+  min-height: 580px;
+  background-image: url('/dist/img/blue-plus.png'), linear-gradient(-180deg, #30123B 0%, rgba(22,33,73,0.00) 100%);
+  background-repeat: repeat-x, no-repeat;
+  background-position: center bottom 10px, top;
+  background-attachment: fixed, fixed;
+  background-color: $color-text;
+
+  &__header {
+    padding: 40px 80px 0 80px;
+    text-align: center;
+
+    @include md {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    };
+
+    .t-external-link {
+      display: none;
+      color: $color-white;
+      text-align: left;
+      width: 137px;
+
+      &:hover {
+        color: $color-yellow;
+      }
+
+      @include md {
+        display: block;
+      };
+    }
+  }
+
+  &__center {
+    padding: 20px;
+
+    color: $color-white;
+    text-align: center;
+
+    @include md {
+      margin: 120px 0;
+    };
+
+    span {
+      display: block;
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 3px;
+      // max-width: 300px;
+      margin: 12px auto;
+      @include md {
+        max-width: none;
+        font-size: 18px;
+        letter-spacing: 5px;
+        font-weight: 300;
+        line-height: 26px;
+      };
+    }
+
+    .c-button {
+      background-color: $color-text;
+      color: $color-white;
+      margin: 60px 0;
+
+      @include md {
+        max-width: 200px;
+        margin: 50px auto;
+      };
+    }
+  }
+
+  &__million {
+
+    &--mobile {
+      img {
+        display: block;
+        margin: 9px auto;
+        max-width: 350px;
+        width: 100%;
+
+        &:first-of-type {
+          margin-bottom: 12px;
+          max-width: 155px;
+
+          width: 45%;
+        }
+      }
+
+      @include md {
+        display: none;
+      };
+    }
+
+    &--desktop {
+      display: none;
+
+      @include md {
+        display: block;
+        width: 80%;
+        max-width: 950px;
+        margin: 12px auto;
+      };
+    }
+  }
+
+  &__footer {
+    display: none;
+
+    @include md {
+      display: block;
+      text-align: center;
+      padding-bottom: 25px;
+      a {
+        color: $color-white;
+        line-height: 18px;
+        &:hover {
+          color: $color-yellow
+        }
+      }
+    };
+  }
+}
+
+.c-social-icons {
+  margin: 35px 0;
+
+  @include md {
+    display: block;
+    float: right;
+  };
+
+  a {
+    margin: 0 7px;
+
+    &:hover svg g{
+      fill: $color-yellow;
+    }
+  }
+}

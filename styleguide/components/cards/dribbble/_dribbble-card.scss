@@ -1,0 +1,18 @@
+.c-dribbble-card {
+  margin: 30px;
+  &__shot {
+    max-width: 320px;
+    max-height: 240px;
+    box-shadow: 0 0 20px 0 $color-shadow;
+    display: block;
+  }
+
+  &__user {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    position: relative;
+    top: 11px;
+  }
+}
