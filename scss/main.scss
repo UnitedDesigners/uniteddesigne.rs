@@ -91,8 +91,6 @@ $breakpoint-xl: 1280px;
       max-width: 290px;
     };
   }
-
-
 }
 
 .l-form {
@@ -114,12 +112,18 @@ $breakpoint-xl: 1280px;
   };
 }
 
-.l-dribbble {
+.l-dribbble, .l-spotify, .l-youtube {
   max-width: 1100px;
   margin: 20px auto;
+  padding: 25px 20px;
 
   @include md {
+    h1 {
+      max-width: 290px;
+    }
+
     .t-body {
+      max-width: 290px;
       margin-right: 50px;
     }
   };
